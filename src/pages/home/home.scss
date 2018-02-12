@@ -1,3 +1,24 @@
 page-home {
-
+  .p-25{
+    padding: 25% 0%;
+  }
+  .home-text{
+    padding: 10px;
+    text-align: center;
+    font-size: 24px;
+}
+.home-text .hsa-text{
+  font-size: 26px;
+  font-weight: 600;
+}
+  .p-25::before{
+  border: 170px solid #fff335;
+  border-radius: 100%;
+  content: "";
+  height: 0;
+  left: -27%;
+  position: absolute;
+  top: -48%;
+  z-index: -1;
+  }
 }

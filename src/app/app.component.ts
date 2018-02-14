@@ -5,6 +5,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
+import { WhatIsHsaPage } from '../pages/what-is-hsa/what-is-hsa';
+import { EstimateEligibleExpensesPage } from '../pages/estimate-eligible-expenses/estimate-eligible-expenses';
+
 
 @Component({
   templateUrl: 'app.html'
@@ -22,7 +25,8 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage }
+      { title: 'What is HSA', component: WhatIsHsaPage },
+    { title: 'Estimate Eligible Expenses', component: EstimateEligibleExpensesPage },
     ];
 
   }

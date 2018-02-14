@@ -20,7 +20,7 @@ page-contribute {
         bottom: 5%;
     }
     .pb-25{
-        padding-bottom:25%; 
+        padding-bottom:25%;
     }
     ion-input placeholder{
         color: black !important;
@@ -28,4 +28,12 @@ page-contribute {
     .p-0{
         padding: 0;
     }
+    .pane {
+        background: url(../../assets/imgs/mobile-bg.png) no-repeat center center fixed;
+         background-size: 100% 100% !important;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    
+}
 }

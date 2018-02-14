@@ -9,6 +9,8 @@ import { ListPage } from '../pages/list/list';
 import { CoveragePage } from '../pages/coverage/coverage';
 import { ContributePage } from '../pages/contribute/contribute';
 import { WithdrawalPage } from '../pages/withdrawal/withdrawal';
+import { WhatIsHsaPage } from '../pages/what-is-hsa/what-is-hsa';
+import { EstimateEligibleExpensesPage } from '../pages/estimate-eligible-expenses/estimate-eligible-expenses';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -20,7 +22,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ListPage,
     CoveragePage,
     ContributePage,
-    WithdrawalPage
+    WithdrawalPage,
+    WhatIsHsaPage,
+    EstimateEligibleExpensesPage
   ],
   imports: [
     BrowserModule,
@@ -33,7 +37,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ListPage,
     CoveragePage,
     ContributePage,
-    WithdrawalPage
+    WithdrawalPage,
+    WhatIsHsaPage,
+    EstimateEligibleExpensesPage
   ],
   providers: [
     StatusBar,

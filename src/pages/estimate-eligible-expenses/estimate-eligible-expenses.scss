@@ -1,0 +1,23 @@
+page-estimate-eligible-expenses {
+.featureList, .featureList ul {
+  margin-top: 0;
+  padding-left: 2em;
+  list-style-type: none;
+}
+.featureList li:before {
+  position: absolute;
+  margin-left: -1.3em;
+  font-weight: bold;
+}
+.featureList li.tick:before {
+  content: "\2713";
+  color: darkgreen;
+}
+     .pane {
+        background: url(../../assets/imgs/mobile-bg.png) no-repeat center center fixed; 
+         background-size: 100% 100% !important;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+}
+}

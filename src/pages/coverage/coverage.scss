@@ -35,7 +35,7 @@ page-coverage {
         padding: 0.5px;
     }
     .pb-25{
-        padding-bottom:25%; 
+        padding-bottom:25%;
     }
     .nextbtn{
         position: absolute;
@@ -44,4 +44,12 @@ page-coverage {
     .f-22{
         font-size: 22px !important;
     }
+    .pane {
+        background: url(../../assets/imgs/mobile-bg.png) no-repeat center center fixed;
+         background-size: 100% 100% !important;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+
+}
 }

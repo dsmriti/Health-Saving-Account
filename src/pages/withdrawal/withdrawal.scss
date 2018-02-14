@@ -1,3 +1,21 @@
 page-withdrawal {
-
+.label-md {
+    padding: 20px 40px;
+        margin: 0;
+    }
+    .label-md-primary, .item-input .label-md-primary, .item-select .label-md-primary, .item-datetime .label-md-primary {
+        color: #ffffff;
+        background-color: #878a8c;
+    }
+    .text-input-md {
+            padding: 20px 10px;
+            background-color: rgba(222,222,222,0.43);
+            color: #000000 !important;
+        }
+    .input-wrapper {
+        padding: 5% 0;
+        }
+     .pb-25{
+        padding-bottom:25%; 
+    }
 }

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
-
+import { WithdrawalPage } from './../withdrawal/withdrawal';
 /**
  * Generated class for the ContributePage page.
  *
@@ -30,5 +30,9 @@ export class ContributePage {
     });
     alert.present()
   }
+  movetowithdrawal(){
+  this.navCtrl.push(WithdrawalPage);
+  }
+
 
 }

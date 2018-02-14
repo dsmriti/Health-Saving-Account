@@ -27,4 +27,10 @@ export class CoveragePage {
 movetocontri(){
   this.navCtrl.push(ContributePage);
   }
+  export class ClickMeComponent {
+  clickMessage = '';
+ 
+  display() {
+    this.clickMessage = 'You are my hero!';
+  }
 }

@@ -1,10 +1,6 @@
-page-coverage {
-  .b-width{
-    width: 100%;
-    font-size: 32px;
-    }
+page-contribute {
     .label-md {
-    padding: 20px 10px;
+    padding: 20px 40px;
         margin: 0;
     }
     .label-md-primary, .item-input .label-md-primary, .item-select .label-md-primary, .item-datetime .label-md-primary {
@@ -19,26 +15,17 @@ page-coverage {
     .input-wrapper {
         padding: 5% 0;
         }
-    .p-10{
-        padding: 10% 0;
-    }
-    .button-md-light {
-    height: 55px;
-    color: #fff;
-    background-color: #000;
-}
-    .button-md-light:hover{
-        color: #000;
-    background-color: #fff335;
-    }
-    .col{
-        padding: 0.5px;
+ .nextbtn{
+        position: absolute;
+        bottom: 5%;
     }
     .pb-25{
         padding-bottom:25%; 
     }
-    .nextbtn{
-        position: absolute;
-        bottom: 5%;
+    ion-input placeholder{
+        color: black !important;
+    }
+    .p-0{
+        padding: 0;
     }
 }

@@ -12,13 +12,29 @@ page-home {
   font-weight: 600;
 }
   .p-25::before{
-  border: 170px solid #fff335;
-  border-radius: 100%;
-  content: "";
-  height: 0;
-  left: -27%;
-  position: absolute;
-  top: -48%;
-  z-index: -1;
+    border: 180px solid #fff335;
+    border-radius: 100%;
+    content: "";
+    height: 0;
+    left: -24%;
+    position: absolute;
+    top: -52%;
+    z-index: -1;
   }
+    .p-25::after{
+    border: 110px solid #ffffff;
+    border-radius: 100%;
+    content: "";
+    height: 0;
+    left: 82%;
+    position: absolute;
+    top: -44%;
+    z-index: 1;
+        
+    }
+    .button-md{
+    background-color: #222;
+    padding: 24px 10px;
+    }
+    
 }

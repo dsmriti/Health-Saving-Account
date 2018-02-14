@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { ContributePage } from './../contribute/contribute';
 
 /**
- * Generated class for the CoveragePage page.
+ * Generated class for the WithdrawalPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -11,20 +10,16 @@ import { ContributePage } from './../contribute/contribute';
 
 @IonicPage()
 @Component({
-  selector: 'page-coverage',
-  templateUrl: 'coverage.html',
+  selector: 'page-withdrawal',
+  templateUrl: 'withdrawal.html',
 })
-export class CoveragePage {
+export class WithdrawalPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad CoveragePage');
+    console.log('ionViewDidLoad WithdrawalPage');
   }
-  
 
-movetocontri(){
-  this.navCtrl.push(ContributePage);
-  }
 }

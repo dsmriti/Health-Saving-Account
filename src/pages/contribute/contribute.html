@@ -1,0 +1,50 @@
+<!--
+  Generated template for the ContributePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>contribute</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-grid>
+     <ion-row >
+        <ion-col class="p-25">
+        <h2>Current HSA Balance</h2>
+    <ion-item>
+    <ion-label color="primary" fixed><ion-icon name="logo-usd"></ion-icon></ion-label>
+    <ion-input type="number" placeholder="$265"></ion-input>
+   </ion-item></ion-col>
+   </ion-row>
+        
+   <ion-list inset>
+       <ion-item>
+        <ion-label class="p-0">Company Contribution</ion-label>
+        <ion-input type="text" placeholder="$500"></ion-input>
+      </ion-item>
+  </ion-list>
+        <ion-row class="pb-25">
+        <ion-col class="p-25">
+        <h2>Your Annual Contribution<div (click)="doAlert()"><ion-icon name="md-help-circle"></ion-icon></div></h2>
+    <ion-item>
+    <ion-label color="primary" fixed><ion-icon name="logo-usd"></ion-icon></ion-label>
+    <ion-input type="number" placeholder="$240"></ion-input>
+   </ion-item>
+        </ion-col>
+   </ion-row>
+        <ion-row >
+        <ion-col col-12 >
+     <button ion-button block class="nextbtn" (click)="movetocontri()">Next<ion-icon name="arrow-forward"></ion-icon></button>
+        </ion-col>
+    </ion-row>
+       
+</ion-grid>
+
+</ion-content>

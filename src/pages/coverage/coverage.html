@@ -13,16 +13,18 @@
 
 <ion-content padding>
   <ion-grid>
-    <ion-row>
+    <ion-row >
+        <ion-col class="p-25">
+        <h2>Your Age</h2>
     <ion-item>
     <ion-label color="primary" fixed>Your Age</ion-label>
     <ion-input type="number" placeholder="Enter Your Age"></ion-input>
-   </ion-item>
+   </ion-item></ion-col>
    </ion-row>
-    <ion-row>
+    <ion-row class="p-10">
    <h2>Your Coverage Level</h2>
     </ion-row>
-    <ion-row>
+    <ion-row class="pb-25">
       <ion-col col-3 col-sm-3 col-md-3>
           <button ion-button color="light" class="b-width"><ion-icon name="contact"></ion-icon></button>
       </ion-col>
@@ -36,5 +38,12 @@
           <button ion-button color="light" class="b-width"><ion-icon name="people"></ion-icon></button>
         </ion-col>
      </ion-row>
+      <ion-row >
+        <ion-col col-12 >
+     <button ion-button block class="nextbtn" (click)="movetocontri()">Next<ion-icon name="arrow-forward"></ion-icon></button>
+        </ion-col>
+    </ion-row>
   </ion-grid>
+    
+   
 </ion-content>

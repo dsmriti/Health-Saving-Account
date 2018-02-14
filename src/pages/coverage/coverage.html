@@ -15,40 +15,42 @@
   <ion-grid>
       <h2>Your Age</h2>
     <ion-row>
-        
-        
+
+
             <ion-col col-6 col-sm-6 col-md-6>
         <button ion-button color="light" class="b-width f-22">Under 50</button>
       </ion-col>
         <ion-col col-6 col-sm-6 col-md-6>
           <button ion-button color="light" class="b-width f-22">Above 50</button>
-        </ion-col> 
-   
+        </ion-col>
+
    </ion-row>
     <ion-row class="p-10">
    <h2>Your Coverage Level</h2>
     </ion-row>
     <ion-row class="pb-25">
+
       <ion-col col-3 col-sm-3 col-md-3 >
-          <button ion-button color="light" class="b-width" (click)="display()"><ion-icon name="contact"></ion-icon></button>
+          <button ion-button color="light" class="b-width" (click)="display('You Only')"><ion-icon name="contact"></ion-icon></button>
       </ion-col>
       <ion-col col-3 col-sm-3 col-md-3>
-        <button ion-button color="light" class="b-width"><ion-icon name="contacts"></ion-icon></button>
+        <button ion-button color="light" class="b-width" (click)="display('You + Spouse')"><ion-icon name="contacts"></ion-icon></button>
       </ion-col>
         <ion-col col-3 col-sm-3 col-md-3>
-          <button ion-button color="light" class="b-width"><ion-icon name="people"></ion-icon></button>
+          <button ion-button color="light" class="b-width" (click)="display('You + Child(ren)')"><ion-icon name="people"></ion-icon></button>
         </ion-col>
         <ion-col col-3 col-sm-3 col-md-3>
-          <button ion-button color="light" class="b-width"><ion-icon name="people"></ion-icon></button>
+          <button ion-button color="light" class="b-width" (click)="display('You + Family')"><ion-icon name="people"></ion-icon></button>
         </ion-col>
+        <p>{{clickMessage}}</p>
      </ion-row>
-      <p>{{clickMessage}}</p>
+
       <ion-row >
         <ion-col col-12 >
      <button ion-button block class="nextbtn" (click)="movetocontri()">Next<ion-icon name="arrow-forward"></ion-icon></button>
         </ion-col>
     </ion-row>
   </ion-grid>
-    
-   
+
+
 </ion-content>

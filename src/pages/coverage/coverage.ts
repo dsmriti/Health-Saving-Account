@@ -15,6 +15,8 @@ import { ContributePage } from './../contribute/contribute';
   templateUrl: 'coverage.html',
 })
 export class CoveragePage {
+  clickMessage:string = ''
+
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
@@ -22,15 +24,13 @@ export class CoveragePage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad CoveragePage');
   }
-  
+
 
 movetocontri(){
   this.navCtrl.push(ContributePage);
   }
-  export class ClickMeComponent {
-  clickMessage = '';
- 
-  display() {
-    this.clickMessage = 'You are my hero!';
+
+  display(m) {
+    this.clickMessage = m;
   }
 }

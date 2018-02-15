@@ -12,6 +12,7 @@ import { WithdrawalPage } from '../pages/withdrawal/withdrawal';
 import { WhatIsHsaPage } from '../pages/what-is-hsa/what-is-hsa';
 import { EstimateEligibleExpensesPage } from '../pages/estimate-eligible-expenses/estimate-eligible-expenses';
 import { ContriModalPage } from '../pages/contri-modal/contri-modal';
+import { ExpenseModalPage } from '../pages/expense-modal/expense-modal';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -26,7 +27,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     WithdrawalPage,
     WhatIsHsaPage,
     EstimateEligibleExpensesPage,
-    ContriModalPage
+    ContriModalPage,
+    ExpenseModalPage
   ],
   imports: [
     BrowserModule,
@@ -42,7 +44,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     WithdrawalPage,
     WhatIsHsaPage,
     EstimateEligibleExpensesPage,
-    ContriModalPage
+    ContriModalPage,
+    ExpenseModalPage
   ],
   providers: [
     StatusBar,

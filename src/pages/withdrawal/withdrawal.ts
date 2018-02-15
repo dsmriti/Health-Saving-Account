@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ExpenseModalPage } from './../expense-modal/expense-modal';
+import { ModalController } from 'ionic-angular';
+import {ContriModalPage} from "../contri-modal/contri-modal";
 
 /**
  * Generated class for the WithdrawalPage page.
@@ -15,11 +18,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class WithdrawalPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public modalCtrl: ModalController) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad WithdrawalPage');
+  }
+  openModal(characterNum) {
+
+    let modal = this.modalCtrl.create(ExpenseModalPage, characterNum);
+    modal.present();
   }
 
 }

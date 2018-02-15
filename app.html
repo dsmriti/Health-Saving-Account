@@ -1,0 +1,31 @@
+<ion-menu [content]="content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>HSA</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list>
+      <!--<button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        {{p.title}}
+      </button>-->
+         <button menuClose ion-item icon-left (click)="nav.setRoot(pages2.HomePage)">
+    <ion-icon name="home"></ion-icon>
+    Home
+  </button>
+           <button menuClose ion-item icon-left (click)="nav.setRoot(pages2.WhatIsHsaPage)">
+    <ion-icon name="paper"></ion-icon>
+    What is HSA
+  </button>
+           <button menuClose ion-item icon-left (click)="nav.setRoot(pages2.EstimateEligibleExpensesPage)">
+   <ion-icon name="logo-usd"></ion-icon>
+   Estimate Eligible Expenses
+  </button>
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

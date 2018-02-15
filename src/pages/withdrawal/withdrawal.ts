@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ExpenseModalPage } from './../expense-modal/expense-modal';
 import { ModalController } from 'ionic-angular';
-import {ContriModalPage} from "../contri-modal/contri-modal";
+import { RatePage } from './../rate/rate';
+
 
 /**
  * Generated class for the WithdrawalPage page.
@@ -28,6 +29,9 @@ export class WithdrawalPage {
 
     let modal = this.modalCtrl.create(ExpenseModalPage, characterNum);
     modal.present();
+  }
+  movetorate(){
+    this.navCtrl.push(RatePage);
   }
 
 }

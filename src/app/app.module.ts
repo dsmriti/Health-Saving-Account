@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
-import { ModalController, Platform, NavParams, ViewController } from 'ionic-angular';
+
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -11,6 +11,7 @@ import { ContributePage } from '../pages/contribute/contribute';
 import { WithdrawalPage } from '../pages/withdrawal/withdrawal';
 import { WhatIsHsaPage } from '../pages/what-is-hsa/what-is-hsa';
 import { EstimateEligibleExpensesPage } from '../pages/estimate-eligible-expenses/estimate-eligible-expenses';
+import { ContriModalPage } from '../pages/contri-modal/contri-modal';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -24,7 +25,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ContributePage,
     WithdrawalPage,
     WhatIsHsaPage,
-    EstimateEligibleExpensesPage
+    EstimateEligibleExpensesPage,
+    ContriModalPage
   ],
   imports: [
     BrowserModule,
@@ -39,7 +41,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ContributePage,
     WithdrawalPage,
     WhatIsHsaPage,
-    EstimateEligibleExpensesPage
+    EstimateEligibleExpensesPage,
+    ContriModalPage
   ],
   providers: [
     StatusBar,
@@ -48,5 +51,4 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   ]
 })
 export class AppModule {
-componentName: 'ClickMeComponent'
 }

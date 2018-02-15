@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { AlertController } from 'ionic-angular';
+import { ModalController } from 'ionic-angular';
 import { WithdrawalPage } from './../withdrawal/withdrawal';
+import { ContriModalPage } from './../contri-modal/contri-modal';
 /**
  * Generated class for the ContributePage page.
  *
@@ -16,20 +17,18 @@ import { WithdrawalPage } from './../withdrawal/withdrawal';
 })
 export class ContributePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public alerCtrl: AlertController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ContributePage');
   }
-  doAlert() {
-    let alert = this.alerCtrl.create({
-      title: 'About Your Annual Contribution',
-      message: 'Each year the Federal government determines the total maximum dollar amount both you and your employer may contribute. For 2017, this maximum is $3,400 if you are Single, and $6,750 for all other coverage levels.If you are aged 55 years or older, you may also make \"catch-up\" contributions of up to $1,000 in addition to your respective maximum contribution amount regardless of coverage level.',
-      buttons: ['Dismiss']
-    });
-    alert.present()
+ openModal(characterNum) {
+
+    let modal = this.modalCtrl.create(ContriModalPage, characterNum);
+    modal.present();
   }
+ 
   movetowithdrawal(){
   this.navCtrl.push(WithdrawalPage);
   }

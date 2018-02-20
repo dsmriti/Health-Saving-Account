@@ -25,4 +25,7 @@ tax_rate: number;
 closeModal() {
     this.viewCtrl.dismiss();
   }
+  display(m) {
+    this.clickMessage = m;
+  }
 }

@@ -29,8 +29,14 @@
       </ion-select>
 </ion-item>
         </ion-row>
-        <ion-row>
-        <p (click)="openModal()">Determine Your Tax Rate</p>
+        <ion-row (click)="openModal()">
+            <ion-col col-1><ion-icon name="alert"></ion-icon> </ion-col>
+        <ion-col col-11><p >Determine Your Tax Rate</p></ion-col>
         </ion-row>
+         <ion-row >
+        <ion-col col-12 class="pt-25">
+     <button ion-button block class="nextbtn" (click)="movetocontri()">Next<ion-icon name="arrow-forward"></ion-icon></button>
+        </ion-col>
+    </ion-row>
 </ion-grid>
 </ion-content>

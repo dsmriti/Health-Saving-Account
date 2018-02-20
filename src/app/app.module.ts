@@ -13,9 +13,12 @@ import { EstimateEligibleExpensesPage } from '../pages/estimate-eligible-expense
 import { ContriModalPage } from '../pages/contri-modal/contri-modal';
 import { ExpenseModalPage } from '../pages/expense-modal/expense-modal';
 import { RatePage } from '../pages/rate/rate';
+import { MarginalPage } from '../pages/marginal/marginal';
+import { DetermineTaxRatePage } from '../pages/determine-tax-rate/determine-tax-rate';
 
-
+import { CommonModule } from '@angular/common';
 import { ChartsModule } from 'ng2-charts';
+
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -31,12 +34,15 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     EstimateEligibleExpensesPage,
     ContriModalPage,
     ExpenseModalPage,
-    RatePage
+    RatePage,
+    MarginalPage,
+    DetermineTaxRatePage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    ChartsModule
+    ChartsModule,
+    CommonModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -49,7 +55,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     EstimateEligibleExpensesPage,
     ContriModalPage,
     ExpenseModalPage,
-    RatePage
+    RatePage,
+    MarginalPage,
+    DetermineTaxRatePage
   ],
   providers: [
     StatusBar,

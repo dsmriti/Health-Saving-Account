@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { MarginalPage } from './../marginal/marginal';
 
 /**
  * Generated class for the RatePage page.
@@ -14,6 +15,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'rate.html',
 })
 export class RatePage {
+ rate: number = 0;
+ growth: number = 0;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
@@ -21,30 +24,8 @@ export class RatePage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad RatePage');
   }
-  public barChartOptions:any = {
-    scaleShowVerticalLines: false,
-    responsive: true
-  };
-
-  //Chart Labels
-  public barChartLabels:string[] = ['2011', '2012', '2013', '2014', '2015', '2016', '2017'];
-  public barChartType:string = 'bar';
-  public barChartLegend:boolean = true;
-
-  //Chart data
-  public barChartData:any[] = [
-    {data: [66, 55, 83, 82, 56, 51, 43], label: 'Loss'},
-    {data: [29, 38, 40, 21, 82, 30, 89], label: 'Profit'}
-  ];
-
-  // Chart events
-  public chartClicked(e:any):void {
-    console.log(e);
-  }
-
-  // Chart events
-  public chartHovered(e:any):void {
-    console.log(e);
+   movetomarginal(){
+  this.navCtrl.push(MarginalPage);
   }
 
 }

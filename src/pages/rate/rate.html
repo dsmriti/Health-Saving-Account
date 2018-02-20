@@ -14,21 +14,30 @@
 
 
 <ion-content padding>
+    <ion-grid>
   <ion-row>
     <ion-col col-12>
-      <div>
-        <div style="display: block">
-          <canvas baseChart height="350"
-                  [datasets]="barChartData"
-                  [labels]="barChartLabels"
-                  [options]="barChartOptions"
-                  [legend]="barChartLegend"
-                  [chartType]="barChartType"
-                  (chartHover)="chartHovered($event)"
-                  (chartClick)="chartClicked($event)"></canvas>
-        </div>
-      </div>
+        <h3>HSA Interest Rate</h3>
+       <ion-item>
+      <ion-range min="0" max="10" pin="true" [(ngModel)]="rate" color="secondary">
+        <ion-icon range-left small name="contrast"></ion-icon>
+        <ion-icon range-right name="contrast"></ion-icon>
+      </ion-range>
+           <p>{{rate}}</p>
+    </ion-item>
+        <h3>Account Growth</h3>
+         <ion-item>
+      <ion-range min="1" max="50" pin="true" [(ngModel)]="growth" color="secondary">
+        <ion-icon range-left small name="contrast"></ion-icon>
+        <ion-icon range-right name="contrast"></ion-icon>
+      </ion-range>
+    </ion-item>
     </ion-col>
   </ion-row>
-
+        <ion-row >
+        <ion-col col-12 >
+     <button ion-button block class="nextbtn" (click)="movetomarginal()">Next<ion-icon name="arrow-forward"></ion-icon></button>
+        </ion-col>
+    </ion-row>
+    </ion-grid>
 </ion-content>

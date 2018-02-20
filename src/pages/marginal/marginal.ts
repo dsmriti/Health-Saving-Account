@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ModalController } from 'ionic-angular';
 import { DetermineTaxRatePage } from './../determine-tax-rate/determine-tax-rate';
+import { ResultPage } from './../result/result';
 
 /**
  * Generated class for the MarginalPage page.
@@ -29,5 +30,7 @@ export class MarginalPage {
     let modal = this.modalCtrl.create(DetermineTaxRatePage, characterNum);
     modal.present();
   }
-
+ movetoresult(){
+    this.navCtrl.push(ResultPage);
+  }
 }

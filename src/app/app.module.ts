@@ -15,7 +15,8 @@ import { ExpenseModalPage } from '../pages/expense-modal/expense-modal';
 import { RatePage } from '../pages/rate/rate';
 import { MarginalPage } from '../pages/marginal/marginal';
 import { DetermineTaxRatePage } from '../pages/determine-tax-rate/determine-tax-rate';
-
+import { ResultPage } from '../pages/result/result';
+import { ViewGraphPage } from '../pages/view-graph/view-graph';
 import { CommonModule } from '@angular/common';
 import { ChartsModule } from 'ng2-charts';
 
@@ -36,7 +37,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ExpenseModalPage,
     RatePage,
     MarginalPage,
-    DetermineTaxRatePage
+    DetermineTaxRatePage,
+    ResultPage,
+    ViewGraphPage
   ],
   imports: [
     BrowserModule,
@@ -57,7 +60,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ExpenseModalPage,
     RatePage,
     MarginalPage,
-    DetermineTaxRatePage
+    DetermineTaxRatePage,
+    ResultPage,
+    ViewGraphPage
   ],
   providers: [
     StatusBar,

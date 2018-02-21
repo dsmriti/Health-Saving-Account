@@ -18,6 +18,7 @@ import { ContriModalPage } from './../contri-modal/contri-modal';
 export class ContributePage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController) {
+
   }
 
   ionViewDidLoad() {
@@ -28,7 +29,7 @@ export class ContributePage {
     let modal = this.modalCtrl.create(ContriModalPage, characterNum);
     modal.present();
   }
- 
+
   movetowithdrawal(){
   this.navCtrl.push(WithdrawalPage);
   }

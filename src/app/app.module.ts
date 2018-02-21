@@ -13,8 +13,6 @@ import { EstimateEligibleExpensesPage } from '../pages/estimate-eligible-expense
 import { ContriModalPage } from '../pages/contri-modal/contri-modal';
 import { ExpenseModalPage } from '../pages/expense-modal/expense-modal';
 import { RatePage } from '../pages/rate/rate';
-
-
 import { ChartsModule } from 'ng2-charts';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -31,7 +29,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     EstimateEligibleExpensesPage,
     ContriModalPage,
     ExpenseModalPage,
-    RatePage
+    RatePage,
+
+
   ],
   imports: [
     BrowserModule,

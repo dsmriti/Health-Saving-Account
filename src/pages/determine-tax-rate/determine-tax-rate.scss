@@ -1,0 +1,41 @@
+page-determine-tax-rate {
+    .b-width{
+    width: 100%;
+    font-size: 32px;
+    }
+    .pb-25{
+        padding-bottom:25%;
+    }
+    .label-md {
+    padding: 20px 10px;
+        margin: 0;
+    }
+    .label-md-primary, .item-input .label-md-primary, .item-select .label-md-primary, .item-datetime .label-md-primary {
+        color: #ffffff;
+        background-color: #878a8c;
+    }
+    .text-input-md {
+            padding: 20px 10px;
+            background-color: rgba(222,222,222,0.43);
+            color: #000000 !important;
+        }
+    .input-wrapper {
+        padding: 5% 0;
+        }
+    .p-10{
+        padding: 10% 0;
+    }
+    .button-md-light {
+    height: 55px;
+    color: #fff;
+    background-color: #000;
+}
+    .button-md-light:hover{
+        color: #000;
+    background-color: #fff335;
+    }
+    .col{
+        padding: 0.5px;
+    }
+
+}

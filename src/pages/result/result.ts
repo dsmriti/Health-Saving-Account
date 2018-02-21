@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { MarginalPage } from './../marginal/marginal';
+import { ViewGraphPage } from './../view-graph/view-graph';
+
 
 /**
- * Generated class for the RatePage page.
+ * Generated class for the ResultPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -11,21 +12,18 @@ import { MarginalPage } from './../marginal/marginal';
 
 @IonicPage()
 @Component({
-  selector: 'page-rate',
-  templateUrl: 'rate.html',
+  selector: 'page-result',
+  templateUrl: 'result.html',
 })
-export class RatePage {
- rate: number = 0;
- growth: number = 0;
+export class ResultPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad RatePage');
+    console.log('ionViewDidLoad ResultPage');
   }
-   movetomarginal(){
-  this.navCtrl.push(MarginalPage);
+ movetograph(){
+    this.navCtrl.push(ViewGraphPage);
   }
-
 }

@@ -22,7 +22,26 @@ $app-direction: ltr;
 // To view all the possible Ionic variables, see:
 // http://ionicframework.com/docs/theming/overriding-ionic-variables/
 
+@font-face {
+  font-family: 'FSThriveElliot';
+  src: url('../assets/fonts/FSThriveElliotRegular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 
+@font-face {
+  font-family: 'FSThriveElliot';
+  src: url('../assets/fonts/FSThriveElliotItalic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'FSThriveElliot';
+  src: url('../assets/fonts/FSThriveElliotBold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
 
 
 // Named Color Variables
@@ -34,14 +53,21 @@ $app-direction: ltr;
 // The "primary" color is the only required color in the map.
 
 $colors: (
-  primary:    #488aff,
-  secondary:  #32db64,
+  primary:    #000000,
+  secondary:  #484848,
   danger:     #f53d3d,
-  light:      #f4f4f4,
-  dark:       #222
+  light:      #fff000,
+  dark:       #c50102
 );
-
-
+$bold:700;
+$pad-glob: 12px 20px 12px 20px ;
+$def-font: 'FSThriveElliot';
+$def-radius: 4px;
+$def-color: #424242;
+$ico-hgt: 20px;
+$v-center:  50% 0 30%;
+$fsize:14px;
+$hr: 1px solid #c1bfbf;
 // App iOS Variables
 // --------------------------------------------------
 // iOS only Sass variables can go here

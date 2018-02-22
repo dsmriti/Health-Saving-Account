@@ -1,55 +1,50 @@
 page-coverage {
-  .b-width{
-    width: 100%;
-    font-size: 32px;
-    }
-    .label-md {
-    padding: 20px 10px;
-        margin: 0;
-    }
-    .label-md-primary, .item-input .label-md-primary, .item-select .label-md-primary, .item-datetime .label-md-primary {
-        color: #ffffff;
-        background-color: #878a8c;
-    }
-    .text-input-md {
-            padding: 20px 10px;
-            background-color: rgba(222,222,222,0.43);
-            color: #000000 !important;
+    .grid{
+         background: rgba(255, 255, 255, 0.62);         
+     }
+       .btn-grp{
+        .button-default{ 
+        padding: 10px 15px; 
+            font-size: $fsize;
+            font-weight: $bold;
+            min-height: 40px;
+                  }
+       
+        ion-icon{
+             height: 30px;
+        width: 50px;
         }
-    .input-wrapper {
-        padding: 5% 0;
+    
+    .single{       
+        background: url('../../assets/icon/user-icons.png') 8px 0px;
+    }
+    .double{
+         background: url('../../assets/icon/user-icons.png');
+        background-position: -72px 0;
+    }
+        .triple{
+         background: url('../../assets/icon/user-icons.png');
+        background-position: -154px 0;
+    }
+        .family{
+         background: url('../../assets/icon/user-icons.png');
+        background-position: -236px 0;
+    }
+         .button-default.active, .button-default:hover{ 
+        background: #fff000;
+              .single{
+        background-position: 8px -47px;
+    }
+             .family{
+        background-position: -236px -47px;
+    }
+             .double{
+        background-position: -72px -47px;
+    }
+        .triple{
+            background-position: -154px -47px;
+    }
         }
-    .p-10{
-        padding: 10% 0;
-    }
-    .button-md-light {
-    height: 55px;
-    color: #fff;
-    background-color: #000;
-}
-    .button-md-light:hover{
-        color: #000;
-    background-color: #fff335;
-    }
-    .col{
-        padding: 0.5px;
-    }
-    .pb-25{
-        padding-bottom:25%;
-    }
-    .nextbtn{
-        position: absolute;
-        bottom: 5%;
-    }
-    .f-22{
-        font-size: 22px !important;
-    }
-    .pane {
-        background: url(../../assets/imgs/mobile-bg.png) no-repeat center center fixed;
-         background-size: 100% 100% !important;
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-
-}
+        
+        }
 }

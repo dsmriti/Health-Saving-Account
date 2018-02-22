@@ -17,17 +17,22 @@ export class MyApp {
   rootPage: any = HomePage;
 
   pages: Array<{title: string, component: any}>;
-
+ pages2: any;
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Home', component: HomePage },
-      { title: 'What is HSA', component: WhatIsHsaPage },
+    { title: 'What is HSA', component: WhatIsHsaPage },
     { title: 'Estimate Eligible Expenses', component: EstimateEligibleExpensesPage },
+
     ];
-    
+     this.pages2 = {
+      WhatIsHsaPage: WhatIsHsaPage,
+      HomePage: HomePage,
+      EstimateEligibleExpensesPage: EstimateEligibleExpensesPage,
+    } 
 
   }
 

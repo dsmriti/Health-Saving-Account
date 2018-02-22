@@ -1,40 +1,20 @@
 page-home {
-  .p-25{
-    padding: 25% 0%;
+   
+  .logo{
+    padding: $v-center;
   }
+    h1{text-align: center;
+     font-weight: $bold;
+    }
   .home-text{
-    padding: 10px;
+    margin: 20px 10px;
+      padding: 10px 40px 10px 40px ;
     text-align: center;
-    font-size: 24px;
+      text-transform: capitalize;
+      .start-ico{
+          height: $ico-hgt;
+          padding-left: 15px;
+      }
+  
 }
-.home-text .hsa-text{
-  font-size: 26px;
-  font-weight: 600;
-}
-  .p-25::before{
-    border: 180px solid #fff335;
-    border-radius: 100%;
-    content: "";
-    height: 0;
-    left: -24%;
-    position: absolute;
-    top: -52%;
-    z-index: -1;
-  }
-    .p-25::after{
-    border: 110px solid #ffffff;
-    border-radius: 100%;
-    content: "";
-    height: 0;
-    left: 82%;
-    position: absolute;
-    top: -44%;
-    z-index: 1;
-        
-    }
-    .button-md{
-    background-color: #222;
-    padding: 24px 10px;
-    }
-    
 }

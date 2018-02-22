@@ -1,39 +1,28 @@
 page-contribute {
-    .label-md {
-    padding: 20px 40px;
-        margin: 0;
-    }
-    .label-md-primary, .item-input .label-md-primary, .item-select .label-md-primary, .item-datetime .label-md-primary {
-        color: #ffffff;
-        background-color: #878a8c;
-    }
-    .text-input-md {
-            padding: 20px 10px;
-            background-color: rgba(222,222,222,0.43);
-            color: #000000 !important;
-        }
-    .input-wrapper {
-        padding: 5% 0;
-        }
- .nextbtn{
-        position: absolute;
-        bottom: 5%;
-    }
-    .pb-15{
-        padding-bottom:15%;
-    }
-    ion-input placeholder{
-        color: black !important;
-    }
-    .p-0{
-        padding: 0;
-    }
-    .pane {
-        background: url(../../assets/imgs/mobile-bg.png) no-repeat center center fixed;
-         background-size: 100% 100% !important;
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
+         .grid{
+         background: rgba(255, 255, 255, 0.62); 
+             
+     }
+   .item-input{
+        background-color: transparent !important;
+       .item-inner{
+       border-bottom: none !important;
+           }
+       .label{
+           color: $def-color;
+           padding-left: 0;
+       }
+       .input{
+               background: rgba(68, 68, 68, 0.1);
+               min-height: 48px;
+       }
+       .label.dollar{
+           padding: $pad-glob;
+           background: $def-color;
+           color: #fff;
+           margin: 0;
+           font-size: $ico-hgt;
+       }
     
-}
-}
+    }
+   }

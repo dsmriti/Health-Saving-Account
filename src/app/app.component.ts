@@ -6,7 +6,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { HomePage } from '../pages/home/home';
 import { WhatIsHsaPage } from '../pages/what-is-hsa/what-is-hsa';
 import { EstimateEligibleExpensesPage } from '../pages/estimate-eligible-expenses/estimate-eligible-expenses';
-
+import { TestingPage } from '../pages/testing/testing';
 
 @Component({
   templateUrl: 'app.html'
@@ -26,13 +26,15 @@ export class MyApp {
       { title: 'Home', component: HomePage },
     { title: 'What is HSA', component: WhatIsHsaPage },
     { title: 'Estimate Eligible Expenses', component: EstimateEligibleExpensesPage },
+    { title: 'Testing', component: TestingPage }
 
     ];
      this.pages2 = {
       WhatIsHsaPage: WhatIsHsaPage,
       HomePage: HomePage,
       EstimateEligibleExpensesPage: EstimateEligibleExpensesPage,
-    } 
+       TestingPage: TestingPage
+    }
 
   }
 

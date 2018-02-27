@@ -19,6 +19,9 @@ import { ResultPage } from '../pages/result/result';
 import { ViewGraphPage } from '../pages/view-graph/view-graph';
 import { CommonModule } from '@angular/common';
 import { ChartsModule } from 'ng2-charts';
+import { TestingPage } from '../pages/testing/testing';
+
+import { File } from '@ionic-native/file';
 
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -39,7 +42,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MarginalPage,
     DetermineTaxRatePage,
     ResultPage,
-    ViewGraphPage
+    ViewGraphPage,
+    TestingPage
   ],
   imports: [
     BrowserModule,
@@ -62,11 +66,13 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MarginalPage,
     DetermineTaxRatePage,
     ResultPage,
-    ViewGraphPage
+    ViewGraphPage,
+    TestingPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    File,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

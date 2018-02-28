@@ -1,11 +1,13 @@
 page-marginal {
-    .pt-25{
-        padding-top:25%;
+  .grid{
+         background: $grid-back; 
+            min-height: 300px; 
+     }
+    .input-wrapper{
+        .select {
+       border: none;
+    max-width: 100%;
+    width: 100%;
+}
     }
-    .nextbtn{
-        position: absolute;
-        bottom: 5%;
-    }
-    
-
 }

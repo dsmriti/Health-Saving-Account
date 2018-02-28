@@ -13,34 +13,44 @@
 </ion-header>
 
 
-<ion-content padding>
-<ion-card>
+<ion-content >
+    <ion-grid padding>
+<ion-card class="card1">
   <ion-card-header>
-    Header 1
+   <strong>Total Potential Value:</strong>
+      <div>$42,929</div>
+       
   </ion-card-header>
+<!--
   <ion-card-content>
     The British use the term "header", but the American term "head-shot" the English simply refuse to adopt.
   </ion-card-content>
+-->
 </ion-card>
-    <ion-card>
-  <ion-card-header>
-    Header 2
+    <ion-card class="card2">
+         <ion-card-header>
+   Contributions <span>$19,912</span>
+      <ion-icon name="plus"> </ion-icon>
+      Interest<span>$10,997</span>
   </ion-card-header>
+ 
+<!--
   <ion-card-content>
     The British use the term "header", but the American term "head-shot" the English simply refuse to adopt.
   </ion-card-content>
+-->
 </ion-card>
-    <ion-card>
+    <ion-card class="card3">
   <ion-card-header>
-    Header 3
+  <strong>Pre-Tax Savings: </strong>
+      <div>$12,020</div>
   </ion-card-header>
+<!--
   <ion-card-content>
     The British use the term "header", but the American term "head-shot" the English simply refuse to adopt.
   </ion-card-content>
-</ion-card>
-    <ion-row >
-        <ion-col col-12 class="pt-25">
+-->
+</ion-card>   
+        </ion-grid>
      <button ion-button block class="nextbtn" (click)="movetograph()">View Graph</button>
-        </ion-col>
-    </ion-row>
 </ion-content>

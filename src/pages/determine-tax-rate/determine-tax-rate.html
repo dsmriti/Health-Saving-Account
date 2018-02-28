@@ -19,26 +19,30 @@
 </ion-header>
 
 
-<ion-content padding>
-  <h3>Determine Your Tax Rate</h3>
-  <ion-row class="pb-25">
+<ion-content>
+    <ion-grid padding>
+         <ion-row>
+  <label>Determine Your Tax Rate</label>
+        </ion-row>
+    <ion-row class="btn-grp">
 
-      <ion-col col-3 col-sm-3 col-md-3 >
-          <button ion-button color="light" class="b-width" (click)="display('Single')"><ion-icon name="contact"></ion-icon></button>
-      </ion-col>
-      <ion-col col-3 col-sm-3 col-md-3>
-        <button ion-button color="light" class="b-width" (click)="display('Married Filing Joint')"><ion-icon name="contacts"></ion-icon></button>
-      </ion-col>
-        <ion-col col-3 col-sm-3 col-md-3>
-          <button ion-button color="light" class="b-width" (click)="display('Married Filing Separate')"><ion-icon name="people"></ion-icon></button>
-        </ion-col>
-        <ion-col col-3 col-sm-3 col-md-3>
-          <button ion-button color="light" class="b-width" (click)="display('Head of Household')"><ion-icon name="people"></ion-icon></button>
+      <ion-col col-12 >
+          <button ion-button class="side-r" (click)="display('You Only')"><ion-icon class="single"></ion-icon></button>
+     
+        <button ion-button class="side-b" (click)="display('You + Spouse')"><ion-icon class="double"></ion-icon></button>
+     
+          <button ion-button color="light" class="side-b active" (click)="display('You + Child(ren)')"><ion-icon class="triple active"></ion-icon></button>
+        
+          <button ion-button class="side-l" (click)="display('You + Family')"><ion-icon class="family"></ion-icon></button>
         </ion-col>
         <p>{{clickMessage}}</p>
-     </ion-row>
+     </ion-row>   
+    <ion-row class="border-t">  
+        <label>Taxable Income</label>
+    </ion-row>
+        <ion-row>
     <ion-item>
-      <ion-label>Taxable Income</ion-label>
+      
       <ion-select [(ngModel)]="tax_rate" submitText="Okay" cancelText="Cancel">
         <ion-option value="dos">Upto $9,325</ion-option>
         <ion-option value="lunix">$9,326 - $37,950</ion-option>
@@ -49,5 +53,6 @@
         <ion-option value="win98">Over $235,350</ion-option>
       </ion-select>
 </ion-item>
-
+        </ion-row>
+    </ion-grid>
 </ion-content>

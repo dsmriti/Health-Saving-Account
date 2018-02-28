@@ -13,31 +13,35 @@
 </ion-header>
 
 
-<ion-content padding>
-    <ion-grid>
+<ion-content >
+    <ion-grid padding>
   <ion-row>
+        <label>HSA Interest Rate</label>
+        </ion-row>
+        <ion-row>
     <ion-col col-12>
-        <h3>HSA Interest Rate</h3>
        <ion-item>
-      <ion-range min="0" max="10" pin="true" [(ngModel)]="rate" color="secondary">
-        <ion-icon range-left small name="contrast"></ion-icon>
-        <ion-icon range-right name="contrast"></ion-icon>
+      <ion-range min="0" max="1000" pin="true" [(ngModel)]="rate" color="secondary">
+        <ion-label class="label small-text" range-left="0">0</ion-label>
+          <ion-label class="label range-right" range-right="1000">1000</ion-label>
       </ion-range>
            <p>{{rate}}</p>
     </ion-item>
-        <h3>Account Growth</h3>
+            </ion-col>
+        </ion-row>
+        <ion-row class="border-t">
+        <label>Account Growth</label>
+        </ion-row>
+              <ion-row>
+    <ion-col col-12>
          <ion-item>
       <ion-range min="1" max="50" pin="true" [(ngModel)]="growth" color="secondary">
-        <ion-icon range-left small name="contrast"></ion-icon>
-        <ion-icon range-right name="contrast"></ion-icon>
+        <ion-label class="label small-text" range-left="0">0</ion-label>
+          <ion-label class="label range-right" range-right="1000">1000</ion-label>
       </ion-range>
     </ion-item>
     </ion-col>
-  </ion-row>
-        <ion-row >
-        <ion-col col-12 >
-     <button ion-button block class="nextbtn" (click)="movetomarginal()">Next<ion-icon name="arrow-forward"></ion-icon></button>
-        </ion-col>
-    </ion-row>
+  </ion-row>       
     </ion-grid>
+     <button ion-button block class="nextbtn" (click)="movetomarginal()">Next<ion-icon name="arrow-forward"></ion-icon></button>
 </ion-content>

@@ -14,20 +14,23 @@
 
 
 <ion-content class="pane">
+    <form novalidate (ngSubmit)="onSubmit(user)" [formGroup]="user">
     <ion-grid padding>
         <label>Current HSA Balance</label>
      <ion-row >
-        <ion-col  col-12>
+        <ion-col col-12>
     <ion-item>
    <ion-label class="dollar">$</ion-label>
-    <ion-input type="number" placeholder="265"></ion-input>
+    <ion-input type="number" placeholder="0" formControlName="amount"></ion-input>
    </ion-item></ion-col>
+       
+       
    </ion-row>
          <ion-row class="border-t">
    <ion-list inset>
        <ion-item>
         <ion-label>Company Contribution</ion-label>
-        <ion-input type="text" placeholder="$500"></ion-input>
+        <ion-input type="number" placeholder="$500"></ion-input>
       </ion-item>
   </ion-list>
         </ion-row>
@@ -39,12 +42,16 @@
       
     <ion-item>
     <ion-label class="dollar">$</ion-label>
-    <ion-input type="number" placeholder="240"></ion-input>
+    <ion-input type="number" placeholder="240" formControlName="contri"></ion-input>
    </ion-item>
         </ion-col>
    </ion-row>
+                  <div class="error" *ngIf="user.get('contri').hasError('max') && user.get('contri').touched" >
+Your Contribution should be less than 3750
+</div>
        
      
-     </ion-grid>
+        </ion-grid></form>
     <button ion-button block class="nextbtn" (click)="movetowithdrawal()">Next<ion-icon name="arrow-forward"></ion-icon></button>
+    
 </ion-content>

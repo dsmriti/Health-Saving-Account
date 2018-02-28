@@ -1,13 +1,16 @@
 page-contribute {
          .grid{
-         background: rgba(255, 255, 255, 0.62); 
+         background: $grid-back; 
              
      }
    .item-input{
         background-color: transparent !important;
-       .item-inner{
-       border-bottom: none !important;
+       .item-inner, .text-input{
+       border: none !important;
+           box-shadow: none !important;
            }
+       .text-input-wp {
+           margin: 10px 8px;}
        .label{
            color: $def-color;
            padding-left: 0;
@@ -15,6 +18,7 @@ page-contribute {
        .input{
                background: rgba(68, 68, 68, 0.1);
                min-height: 48px;
+               padding-left: 0px;
        }
        .label.dollar{
            padding: $pad-glob;
@@ -23,6 +27,13 @@ page-contribute {
            margin: 0;
            font-size: $ico-hgt;
        }
-    
+  
     }
+
+     .error
+     {
+       color:red;
+     }
+
+
    }

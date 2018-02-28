@@ -15,7 +15,7 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 @import "../theme/variables";
-body, h1, h2, h3, h4, p, a, label{
+body, h1, h2, h3, h4, p, a, label, ion-grid{
      font-family: $def-font;
 }
 .button-default{
@@ -66,3 +66,4 @@ padding: 10px 0 5px;
     margin-top: 30px;
     padding-top: 20px; 
 }
+.item-inner{ background-color: none;}

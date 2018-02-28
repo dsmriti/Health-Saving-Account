@@ -13,11 +13,12 @@
 </ion-header>
 
 
-<ion-content padding>
-    <ion-grid>
+<ion-content>
+    <ion-grid padding>
         <ion-row>
+              <label>Marginal Tax Rate</label>
     <ion-item>
-      <ion-label>Marginal Tax Rate</ion-label>
+    
       <ion-select [(ngModel)]="tax_rate" submitText="Okay" cancelText="Cancel">
         <ion-option value="dos">10%</ion-option>
         <ion-option value="lunix">15%</ion-option>
@@ -30,13 +31,10 @@
 </ion-item>
         </ion-row>
         <ion-row (click)="openModal()">
-            <ion-col col-1><ion-icon name="alert"></ion-icon> </ion-col>
-        <ion-col col-11><p >Determine Your Tax Rate</p></ion-col>
+            <ion-col col-12><p ><ion-icon name="alert"></ion-icon> 
+        Determine Your Tax Rate</p></ion-col>
         </ion-row>
-         <ion-row >
-        <ion-col col-12 class="pt-25">
-     <button ion-button block class="nextbtn" (click)="movetoresult()">Next<ion-icon name="arrow-forward"></ion-icon></button>
-        </ion-col>
-    </ion-row>
+         
 </ion-grid>
+    <button ion-button block class="nextbtn" (click)="movetoresult()">Next<ion-icon name="arrow-forward"></ion-icon></button>
 </ion-content>

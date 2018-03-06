@@ -15,16 +15,11 @@
 
 <ion-content padding>
   <ion-grid>
-    <ion-row *ngFor="let row of data">
+    <ion-row *ngFor="let row of page_data">
       <ion-col *ngFor="let val of row">
         {{val}}
       </ion-col>
     </ion-row>
-    <input type="file" (change)="onFileChange($event)"/>
   </ion-grid>
-
-
-
-
 
 </ion-content>

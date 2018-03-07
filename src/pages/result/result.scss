@@ -18,31 +18,37 @@ page-result {
                  width: 60%;
                  word-break: normal;
                      white-space: normal;
-    text-align: center;
                  padding: 25px 10px;
                  div{
                       color: #d7ae30;
                  font-size: 32px;
+                   
                  }
              }
          }
            .card2{
-             background: #f3f3f3 url(../../assets/icon/icon-contri-interest.jpg) no-repeat;
+             background: #f3f3f3 url(../../assets/icon/icon-contri-interest.jpg) repeat-y;
                  .card-header{
                      margin-left: 105px;
-    text-align: center;
-                 color: #9e37a4;
+                 color: #852214;
                  font-size: 16px;
                  text-overflow: inherit;
-                 width: 60%;
+                 width: 65%;
                  word-break: normal;
                      white-space: normal;
-    text-align: center;
-                 padding: 25px 10px;
-                 div{
-                      color: #d7ae30;
-                 font-size: 32px;
+    text-align: left;
+                 padding: 8px 10px 6px 20px;
+                 span{
+                      color: #91a435;
+                 font-size: 28px;                     
                  }
+                 .plus{ font-size: 40px;
+                     font-weight: bolder;
+                      color: #852214;
+                        text-align: right;
+                     margin: -14px 72px -47px 10px;
+                     }   
+                     .right{ text-align: right;}    
          }
          }
            .card3{
@@ -50,17 +56,16 @@ page-result {
                  .card-header{
                      margin-left: 105px;
     text-align: center;
-                 color: #9e37a4;
-                 font-size: 16px;
+                 color: #17737c;
+                 font-size: 20px;
                  text-overflow: inherit;
-                 width: 60%;
+                 width: 65%;
                  word-break: normal;
                      white-space: normal;
-    text-align: center;
                  padding: 25px 10px;
                  div{
-                      color: #d7ae30;
-                 font-size: 32px;
+                      color: #ff6a00;
+                 font-size: 36px;
                  }
          }
      }

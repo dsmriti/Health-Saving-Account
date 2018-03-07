@@ -14,14 +14,23 @@ export class TestingPage {
   }
 
   ionViewDidLoad() {
+    let m:any;
     console.log('ionViewDidLoad TestingPage');
-    this.XLStoJSON();
+    m=this.XLStoJSON();
+    m.then(function(mydata){
+      alert("success");
+      console.log("done",mydata);
+    })
+    m.catch(function(mydata){
+      alert("error");
+      console.log("error",mydata);
+    })
   }
 
 
   public XLStoJSON() {
     return new Promise((resolve, reject) => {
-      var url = 'http://localhost:8100/src/hsa.xlsx';
+      var url = '../assets/hsa.xlsx';
       var oReq = new XMLHttpRequest();
       var workbook: any;
       oReq.open("GET", url, true);
@@ -40,7 +49,7 @@ export class TestingPage {
           this.arrangeData(json);
           resolve('Finished generating JSON');
         } else {
-          reject(console.log('XMLHttpRequest failed; error code:' + oReq.statusText));
+          reject('XMLHttpRequest failed; error code:' + oReq.statusText);
         }
       }
       oReq.send();
@@ -55,7 +64,7 @@ export class TestingPage {
       var currentarray = [];
       currentarray.push(jsonData[i]["Parameter"]);
       currentarray.push(jsonData[i]["Content"]);
-      currentarray.push(jsonData[i]["Valid Values / Notes"]);
+      currentarray.push(jsonData[i]["Valid Values/ Notes"]);
       temparray.push(currentarray)
     }
 

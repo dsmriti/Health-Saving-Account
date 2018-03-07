@@ -1,14 +1,14 @@
 page-result {
      .grid{
-         background: $grid-back; 
-            min-height: 300px; 
+         background: $grid-back;
+            min-height: 300px;
          .card {
              background: #f3f3f3;
                  box-shadow: -3px 4px 8px rgba(0, 0, 0, 0.3);
     margin: 15px;
          }
          .card1{
-             background: #f3f3f3 url(../../assets/icon/icon-total.jpg) no-repeat;
+             background: #f3f3f3 url(assets/icon/icon-total.jpg) no-repeat;
              .card-header{
                      margin-left: 105px;
     text-align: center;
@@ -22,12 +22,12 @@ page-result {
                  div{
                       color: #d7ae30;
                  font-size: 32px;
-                   
+
                  }
              }
          }
            .card2{
-             background: #f3f3f3 url(../../assets/icon/icon-contri-interest.jpg) repeat-y;
+             background: #f3f3f3 url(assets/icon/icon-contri-interest.jpg) repeat-y;
                  .card-header{
                      margin-left: 105px;
                  color: #852214;
@@ -40,19 +40,19 @@ page-result {
                  padding: 8px 10px 6px 20px;
                  span{
                       color: #91a435;
-                 font-size: 28px;                     
+                 font-size: 28px;
                  }
                  .plus{ font-size: 40px;
                      font-weight: bolder;
                       color: #852214;
                         text-align: right;
                      margin: -14px 72px -47px 10px;
-                     }   
-                     .right{ text-align: right;}    
+                     }
+                     .right{ text-align: right;}
          }
          }
            .card3{
-             background: #f3f3f3 url(../../assets/icon/icon-savingl.jpg) no-repeat;
+             background: #f3f3f3 url(assets/icon/icon-savingl.jpg) no-repeat;
                  .card-header{
                      margin-left: 105px;
     text-align: center;

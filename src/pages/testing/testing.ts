@@ -30,7 +30,7 @@ export class TestingPage {
 
   public XLStoJSON() {
     return new Promise((resolve, reject) => {
-      var url = '../assets/hsa.xlsx';
+      var url = 'assets/hsa.xlsx';
       var oReq = new XMLHttpRequest();
       var workbook: any;
       oReq.open("GET", url, true);

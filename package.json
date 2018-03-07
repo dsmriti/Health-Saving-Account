@@ -29,7 +29,7 @@
     "alasql": "^0.4.5",
     "angular2-round-slider": "^0.2.9",
     "chart.js": "^2.7.1",
-    "cordova-android": "7.0.0",
+    "cordova-android": "^7.0.0",
     "cordova-plugin-device": "^2.0.1",
     "cordova-plugin-file": "^6.0.1",
     "cordova-plugin-ionic-keyboard": "^2.0.5",

@@ -16,7 +16,7 @@ export class TestingPage {
   ionViewDidLoad() {
     let m:any;
     console.log('ionViewDidLoad TestingPage');
-    m=this.XLStoJSON();
+    m=this.XLStoJSON("Tax_Brackets");
     m.then(function(mydata){
       alert("success");
       console.log("done",mydata);
@@ -28,7 +28,7 @@ export class TestingPage {
   }
 
 
-  public XLStoJSON() {
+  public XLStoJSON(used_sheet_name) {
     return new Promise((resolve, reject) => {
       var url = 'assets/hsa.xlsx';
       var oReq = new XMLHttpRequest();
@@ -43,8 +43,16 @@ export class TestingPage {
           for (var i = 0; i != data.length; ++i) arr[i] = String.fromCharCode(data[i]);
           var bstr = arr.join("");
           workbook = XLSX.read(bstr, {type: "binary"});
-          var worksheetname = workbook.SheetNames[0];
-          var worksheet = workbook.Sheets[worksheetname];
+
+          // for (var j=0; j< workbook.SheetNames.length; j++) {
+          //   var current_sheet_name = workbook.SheetNames[j];
+          //   var current_sheet = workbook.Sheets[current_sheet_name];
+          //   var current_json = XLSX.utils.sheet_to_json(current_sheet, {raw: true});
+          //   console.log(current_sheet_name);
+          //   console.log(current_json);
+          // }
+          // var worksheetname = workbook.SheetNames[0];
+          var worksheet = workbook.Sheets[used_sheet_name];
           var json = XLSX.utils.sheet_to_json(worksheet, {raw: true});
           this.arrangeData(json);
           resolve('Finished generating JSON');
@@ -60,11 +68,18 @@ export class TestingPage {
     console.log(jsonData);
     var temparray = [];
 
+    var keys = Object.keys(jsonData[0]);
+    console.log(keys);
+    temparray.push(keys);
     for (var i = 0; i != jsonData.length; ++i) {
       var currentarray = [];
-      currentarray.push(jsonData[i]["Parameter"]);
-      currentarray.push(jsonData[i]["Content"]);
-      currentarray.push(jsonData[i]["Valid Values/ Notes"]);
+
+      // currentarray.push(jsonData[i]["Parameter"]);
+      // currentarray.push(jsonData[i]["Content"]);
+      // currentarray.push(jsonData[i]["Valid Values/ Notes"]);
+      for (var j =0 ; j < keys.length; j++) {
+        currentarray.push(jsonData[i][keys[j]]);
+      }
       temparray.push(currentarray)
     }
 

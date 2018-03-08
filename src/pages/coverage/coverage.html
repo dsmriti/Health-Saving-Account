@@ -21,23 +21,23 @@
         </ion-col>
 
    </ion-row>
-     
+
     <ion-row class="border-t">
    <label>Your Coverage Level</label>
     </ion-row>
     <ion-row class="btn-grp">
 
       <ion-col col-12 >
-          <button ion-button class="side-r" (click)="display('You Only')"><ion-icon class="single"></ion-icon></button>
-     
+          <button ion-button class="side-r active" (click)="display('You Only')"><ion-icon class="single"></ion-icon></button>
+
         <button ion-button class="side-b" (click)="display('You + Spouse')"><ion-icon class="double"></ion-icon></button>
-     
-          <button ion-button color="light" class="side-b active" (click)="display('You + Child(ren)')"><ion-icon class="triple active"></ion-icon></button>
-        
+
+          <button ion-button color="light" class="side-b" (click)="display('You + Child(ren)')"><ion-icon class="triple active"></ion-icon></button>
+
           <button ion-button class="side-l" (click)="display('You + Family')"><ion-icon class="family"></ion-icon></button>
         </ion-col>
         <p>{{clickMessage}}</p>
-     </ion-row>      
+     </ion-row>
   </ion-grid>
  <button ion-button full class="nextbtn" (click)="movetocontri()">Next <ion-icon name="arrow-forward"></ion-icon></button>
 </ion-content>

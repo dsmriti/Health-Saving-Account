@@ -14,16 +14,19 @@ export class TestingPage {
   }
 
   ionViewDidLoad() {
-    let m:any;
-    console.log('ionViewDidLoad TestingPage');
-    m=this.XLStoJSON("Tax_Brackets");
+    let m, n, k:any;
+    //console.log('ionViewDidLoad TestingPage');
+    m = this.XLStoJSON("Tiers_SeedMoney_Limits");
+    n = this.XLStoJSON("Globals");
+    k = this.XLStoJSON("Tax_Brackets");
+
     m.then(function(mydata){
-      alert("success");
-      console.log("done",mydata);
+      //alert("success");
+      //console.log("done",mydata);
     })
     m.catch(function(mydata){
-      alert("error");
-      console.log("error",mydata);
+      //alert("error");
+     // console.log("error",mydata);
     })
   }
 
@@ -44,17 +47,10 @@ export class TestingPage {
           var bstr = arr.join("");
           workbook = XLSX.read(bstr, {type: "binary"});
 
-          // for (var j=0; j< workbook.SheetNames.length; j++) {
-          //   var current_sheet_name = workbook.SheetNames[j];
-          //   var current_sheet = workbook.Sheets[current_sheet_name];
-          //   var current_json = XLSX.utils.sheet_to_json(current_sheet, {raw: true});
-          //   console.log(current_sheet_name);
-          //   console.log(current_json);
-          // }
-          // var worksheetname = workbook.SheetNames[0];
-          var worksheet = workbook.Sheets[used_sheet_name];
+         var worksheet = workbook.Sheets[used_sheet_name];
           var json = XLSX.utils.sheet_to_json(worksheet, {raw: true});
-          this.arrangeData(json);
+          this.arrangeData(json, used_sheet_name);
+
           resolve('Finished generating JSON');
         } else {
           reject('XMLHttpRequest failed; error code:' + oReq.statusText);
@@ -64,19 +60,16 @@ export class TestingPage {
     });
   }
 
-  public arrangeData(jsonData) {
-    console.log(jsonData);
+  public arrangeData(jsonData, used_sheet_name) {
+    //console.log(jsonData);
+    localStorage.setItem(used_sheet_name, JSON.stringify(jsonData));
     var temparray = [];
 
     var keys = Object.keys(jsonData[0]);
-    console.log(keys);
+   // console.log(keys);
     temparray.push(keys);
     for (var i = 0; i != jsonData.length; ++i) {
       var currentarray = [];
-
-      // currentarray.push(jsonData[i]["Parameter"]);
-      // currentarray.push(jsonData[i]["Content"]);
-      // currentarray.push(jsonData[i]["Valid Values/ Notes"]);
       for (var j =0 ; j < keys.length; j++) {
         currentarray.push(jsonData[i][keys[j]]);
       }
@@ -84,5 +77,6 @@ export class TestingPage {
     }
 
     this.page_data = temparray;
+    
   }
 }

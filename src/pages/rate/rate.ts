@@ -15,17 +15,22 @@ import { MarginalPage } from './../marginal/marginal';
   templateUrl: 'rate.html',
 })
 export class RatePage {
- rate: number = 0;
- growth: number = 0;
+  rate: number = 0;
+  growth: number = 0;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad RatePage');
-  }
-   movetomarginal(){
-  this.navCtrl.push(MarginalPage);
+    this.taxbracket(0);
   }
 
+  movetomarginal(){
+    this.navCtrl.push(MarginalPage);
+  }
+
+  taxbracket(coverageType){
+    
+  }
 }

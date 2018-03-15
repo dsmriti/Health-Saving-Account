@@ -1,9 +1,10 @@
-///<reference path="../../providers/sharedata/sharedata.ts"/>
+
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ContributePage } from './../contribute/contribute';
 import { SharedataProvider } from '../../providers/sharedata/sharedata';
-import {HttpClient} from "@angular/common/http";
+
+
 
 /**
  * Generated class for the CoveragePage page.
@@ -18,19 +19,19 @@ import {HttpClient} from "@angular/common/http";
   templateUrl: 'coverage.html',
 })
 export class CoveragePage {
+
   clickMessage:string = '';
   public serviceData: any;
-
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public shareDataProvider: SharedataProvider) {
 
   }
 
   async ionViewDidLoad() {
-    await this.delay(1000);
-    console.log("data collected");
-    this.serviceData = this.shareDataProvider.gettaxrate();
-    console.log(this.serviceData);
+    
+
+   
+
   }
 
   public getoverhallcoverage(data) {
@@ -39,14 +40,34 @@ export class CoveragePage {
     return result;
   }
 
-  public delay(ms: number) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-  }
-movetocontri(){
-  this.navCtrl.push(ContributePage);
+  
+  movetocontri(){
+    this.navCtrl.push(ContributePage);
   }
 
   display(m) {
-    this.clickMessage = m;
+
+    let covType:object;
+    let agetype:object;
+
+    covType = {
+      "0": "You Only",
+      "1": "You + Spouse",
+      "2": "You + Child(ren)",
+      "3": "You + Family"
+    };
+
+    agetype = {
+      "0": "Under 55",
+      "1": "55 and Above 55"
+    };
+
+    sessionStorage.setItem("coverageType", m);
+    this.clickMessage = covType[m];
   }
+
+  age(m){
+    sessionStorage.setItem("age", m);
+  }
+  
 }

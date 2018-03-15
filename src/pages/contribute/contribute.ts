@@ -24,9 +24,18 @@ export class ContributePage implements OnInit {
   constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController) {
   }
 
+  public companyCon: string = '$500';
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad ContributePage');
-    this.companyContribution(2,0);
+    let coverageType: any;
+    let age: any;
+    let tiersSeedMoney: Object;
+    coverageType = sessionStorage.getItem("coverageType");
+    age = sessionStorage.getItem("age");
+    tiersSeedMoney = this.companyContribution(coverageType,age);
+    console.log(tiersSeedMoney["company_contribution"]);
+    //companyCon = tiersSeedMoney["company_contribution"];
   }
 
   openModal(characterNum) {
@@ -47,13 +56,15 @@ export class ContributePage implements OnInit {
 
   companyContribution(yourCoverageType, yourAge){
     let Tiers_SeedMoney_Limits = JSON.parse(localStorage.getItem("Tiers_SeedMoney_Limits"));
-    let irsCatchup:any;
+    let irsCatchup: number;
     let companyContri = Tiers_SeedMoney_Limits[yourCoverageType].input_cocontribSQL;
     let irsLimit = Tiers_SeedMoney_Limits[yourCoverageType].input_IRSreglimitSQL;
     if(yourAge == 1){
         irsCatchup = Tiers_SeedMoney_Limits[yourCoverageType].input_IRScatchupSQL;
     }else{
-        irsCatchup = "0";
-    }    
+        irsCatchup = 0;
+    }
+    
+    return {"company_contribution": companyContri, "irsLimit": irsLimit, "irsCatchup": irsCatchup};
   }
 }

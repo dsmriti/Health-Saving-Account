@@ -26,6 +26,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { SharedataProvider } from '../providers/sharedata/sharedata';
 
+
 @NgModule({
   declarations: [
     MyApp,
@@ -73,8 +74,10 @@ import { SharedataProvider } from '../providers/sharedata/sharedata';
     SplashScreen,
     File,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    SharedataProvider
+    SharedataProvider,
+
   ]
 })
 export class AppModule {
+
 }

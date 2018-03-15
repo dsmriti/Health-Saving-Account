@@ -1,6 +1,4 @@
-
 import * as XLSX from "xlsx";
-
 import { Injectable } from '@angular/core';
 
 @Injectable()
@@ -10,7 +8,7 @@ export class SharedataProvider {
   constructor() {
     this.XLStoJSON();
   }
-
+ //json created for Tiers_SeedMoney_Limits sheet
   getCoverageData() {
     var data = {
       "under_50": {},
@@ -33,6 +31,7 @@ export class SharedataProvider {
 
   }
 
+  //json created for fetching the tax rate from Tax_Brackets sheet
   gettaxrate() {
     var data = {};
     var selected_data = this.json[1];
@@ -60,7 +59,7 @@ export class SharedataProvider {
   }
 
   XLStoJSON() {
-    // Fills all the sheet in this.json as sson as ShareDataProvider is called.
+    // Fills all the sheet in this.json as soon as ShareDataProvider is called.
     return new Promise((resolve, reject) => {
       var url = 'assets/hsa.xlsx';
       var oReq = new XMLHttpRequest();
@@ -89,69 +88,5 @@ export class SharedataProvider {
       oReq.send();
     });
   }
-
-
-
 }
-/*
-  Generated class for the SharedataProvider provider.
 
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
-*/
-// @Injectable()
-// export class SharedataProvider {
-//   page_data: any[][] = [];
-//
-//   constructor(public http: HttpClient) {
-//     console.log('Hello SharedataProvider Provider');
-//   }
-  // public XLStoJSON(used_sheet_name) {
-  //   return new Promise((resolve, reject) => {
-  //     var url = 'assets/hsa.xlsx';
-  //     var oReq = new XMLHttpRequest();
-  //     var workbook: any;
-  //     oReq.open("GET", url, true);
-  //     oReq.responseType = "arraybuffer";
-  //     oReq.onload = (e) => {
-  //       if (oReq.status >= 200 && oReq.status < 300) {
-  //         var arraybuffer = oReq.response;
-  //         var data = new Uint8Array(arraybuffer);
-  //         var arr = new Array();
-  //         for (var i = 0; i != data.length; ++i) arr[i] = String.fromCharCode(data[i]);
-  //         var bstr = arr.join("");
-  //         workbook = XLSX.read(bstr, {type: "binary"});
-  //
-  //         var worksheet = workbook.Sheets[used_sheet_name];
-  //         var json = XLSX.utils.sheet_to_json(worksheet, {raw: true});
-  //         this.arrangeData(json, used_sheet_name);
-  //
-  //         resolve('Finished generating JSON');
-  //       } else {
-  //         reject('XMLHttpRequest failed; error code:' + oReq.statusText);
-  //       }
-  //     }
-  //     oReq.send();
-  //   });
-  // }
-// arrangeData(jsonData, used_sheet_name) {
-//
-//     localStorage.setItem(used_sheet_name, JSON.stringify(jsonData));
-//     var temparray = [];
-//
-//     var keys = Object.keys(jsonData[0]);
-//
-//     temparray.push(keys);
-//     for (var i = 0; i != jsonData.length; ++i) {
-//       var currentarray = [];
-//       for (var j =0 ; j < keys.length; j++) {
-//         currentarray.push(jsonData[i][keys[j]]);
-//       }
-//       temparray.push(currentarray)
-//     }
-//
-//     this.page_data = temparray;
-//     console.log(this.page_data)
-//
-//   }
-// }

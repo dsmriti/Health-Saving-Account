@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { IonicStorageModule } from '@ionic/storage';
 
 
 import { MyApp } from './app.component';
@@ -49,7 +50,8 @@ import { SharedataProvider } from '../providers/sharedata/sharedata';
     BrowserModule,
     IonicModule.forRoot(MyApp),
     ChartsModule,
-    CommonModule
+    CommonModule,
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [

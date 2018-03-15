@@ -3,13 +3,15 @@ import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { LoadingController } from 'ionic-angular';
-import { SecureStorage, SecureStorageObject } from '@ionic-native/secure-storage';
+// import { SecureStorage, SecureStorageObject } from '@ionic-native/secure-storage';
+import { Storage } from '@ionic/storage';
+
 
 import { HomePage } from '../pages/home/home';
 import { WhatIsHsaPage } from '../pages/what-is-hsa/what-is-hsa';
 import { EstimateEligibleExpensesPage } from '../pages/estimate-eligible-expenses/estimate-eligible-expenses';
 import { TestingPage } from '../pages/testing/testing';
-import { WalkthroughPage } from "../pages/walkthrough/walkthrough";
+import { WalkthroughPage } from '../pages/walkthrough/walkthrough';
 
 
 @Component({
@@ -22,23 +24,23 @@ export class MyApp {
   loader: any;
 
   pages: Array<{title: string, component: any}>;
- pages2: any;
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, public loadingCtrl: LoadingController, public secureStorage: SecureStorage) {
+  pages2: any;
+  constructor(public platform: Platform,public storage:Storage, public statusBar: StatusBar, public splashScreen: SplashScreen, public loadingCtrl: LoadingController) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Home', component: HomePage },
-    { title: 'What is HSA', component: WhatIsHsaPage },
-    { title: 'Estimate Eligible Expenses', component: EstimateEligibleExpensesPage },
-    { title: 'testing', component: TestingPage },
+      { title: 'What is HSA', component: WhatIsHsaPage },
+      { title: 'Estimate Eligible Expenses', component: EstimateEligibleExpensesPage },
+      { title: 'testing', component: TestingPage },
 
     ];
-     this.pages2 = {
+    this.pages2 = {
       WhatIsHsaPage: WhatIsHsaPage,
       HomePage: HomePage,
       EstimateEligibleExpensesPage: EstimateEligibleExpensesPage,
-       TestingPage: TestingPage,
+      TestingPage: TestingPage,
     }
 
     //for walkthrough sliders
@@ -46,13 +48,17 @@ export class MyApp {
 
     this.platform.ready().then(() => {
 
-      this.secureStorage.get('introShown').then((result) => {
+      this.storage.get('introShown').then((result) => {
+
 
         if(result){
           this.rootPage = 'HomePage';
         } else {
           this.rootPage = 'WalkthroughPage';
-          this.secureStorage.set('introShown', true);
+
+          this.storage.set('introShown',true).then((val2)=>{})
+
+          // this.secureStorage.set('introShown', true);
         }
 
         this.loader.dismiss();

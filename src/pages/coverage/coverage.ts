@@ -28,9 +28,9 @@ export class CoveragePage {
   }
 
   async ionViewDidLoad() {
-    
 
-   
+
+
 
   }
 
@@ -40,7 +40,6 @@ export class CoveragePage {
     return result;
   }
 
-  
   movetocontri(){
     this.navCtrl.push(ContributePage);
   }
@@ -69,5 +68,5 @@ export class CoveragePage {
   age(m){
     sessionStorage.setItem("age", m);
   }
-  
+
 }

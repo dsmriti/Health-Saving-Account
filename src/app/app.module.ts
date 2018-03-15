@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
-import { IonicStorageModule } from '@ionic/storage';
+
 
 
 import { MyApp } from './app.component';
@@ -19,6 +19,7 @@ import { DetermineTaxRatePage } from '../pages/determine-tax-rate/determine-tax-
 import { ResultPage } from '../pages/result/result';
 import { TestingPage } from '../pages/testing/testing';
 import { ViewGraphPage } from '../pages/view-graph/view-graph';
+import { WalkthroughPage } from '../pages/walkthrough/walkthrough';
 import { CommonModule } from '@angular/common';
 import { ChartsModule } from 'ng2-charts';
 import { File } from '@ionic-native/file';
@@ -26,6 +27,7 @@ import { File } from '@ionic-native/file';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { SharedataProvider } from '../providers/sharedata/sharedata';
+import { IonicStorageModule } from '@ionic/storage';
 
 
 @NgModule({
@@ -44,7 +46,8 @@ import { SharedataProvider } from '../providers/sharedata/sharedata';
     DetermineTaxRatePage,
     ResultPage,
     ViewGraphPage,
-    TestingPage
+    TestingPage,
+    WalkthroughPage
   ],
   imports: [
     BrowserModule,
@@ -52,6 +55,7 @@ import { SharedataProvider } from '../providers/sharedata/sharedata';
     ChartsModule,
     CommonModule,
     IonicStorageModule.forRoot()
+
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -69,7 +73,8 @@ import { SharedataProvider } from '../providers/sharedata/sharedata';
     DetermineTaxRatePage,
     ResultPage,
     ViewGraphPage,
-    TestingPage
+    TestingPage,
+    WalkthroughPage
   ],
   providers: [
     StatusBar,

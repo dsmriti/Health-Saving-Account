@@ -20,7 +20,7 @@ import { WalkthroughPage } from '../pages/walkthrough/walkthrough';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
+  rootPage: any ;
   loader: any;
 
   pages: Array<{title: string, component: any}>;
@@ -48,22 +48,25 @@ export class MyApp {
 
     this.platform.ready().then(() => {
 
+      // this.storage.set('introShown',false).then((vall)=>{
+
       this.storage.get('introShown').then((result) => {
-
-
         if(result){
-          this.rootPage = 'HomePage';
+          this.rootPage = HomePage;
         } else {
-          this.rootPage = 'WalkthroughPage';
+          this.rootPage = WalkthroughPage;
 
           this.storage.set('introShown',true).then((val2)=>{})
-
-          // this.secureStorage.set('introShown', true);
         }
 
         this.loader.dismiss();
 
       });
+
+
+      // })
+
+
 
     });
 

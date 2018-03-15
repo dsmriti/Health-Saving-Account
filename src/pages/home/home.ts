@@ -12,7 +12,7 @@ export class HomePage {
 
   }
   movetocoverage(){
-  this.navCtrl.push(CoveragePage);
+    this.navCtrl.push(CoveragePage);
   }
 
 }

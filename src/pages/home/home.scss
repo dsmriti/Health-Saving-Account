@@ -1,20 +1,20 @@
 page-home {
-   
+
   .logo{
     padding: $v-center;
   }
-    h1{text-align: center;
-     font-weight: $bold;
-    }
+  h1{text-align: center;
+    font-weight: $bold;
+  }
   .home-text{
     margin: 20px 10px;
-      padding: 10px 40px 10px 40px ;
+    padding: 10px 40px 10px 40px ;
     text-align: center;
-      text-transform: capitalize;
-      .start-ico{
-          height: $ico-hgt;
-          padding-left: 15px;
-      }
-  
-}
+    text-transform: capitalize;
+    .start-ico{
+      height: $ico-hgt;
+      padding-left: 15px;
+    }
+
+  }
 }

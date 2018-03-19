@@ -5,14 +5,6 @@ import { ContributePage } from './../contribute/contribute';
 import { SharedataProvider } from '../../providers/sharedata/sharedata';
 
 
-
-/**
- * Generated class for the CoveragePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-coverage',
@@ -20,7 +12,7 @@ import { SharedataProvider } from '../../providers/sharedata/sharedata';
 })
 export class CoveragePage {
 
-  clickMessage:string = '';
+  clickMessage:string = 'You Only';
   public serviceData: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public shareDataProvider: SharedataProvider) {
@@ -28,9 +20,9 @@ export class CoveragePage {
   }
 
   async ionViewDidLoad() {
+    
 
-
-
+   
 
   }
 
@@ -40,11 +32,14 @@ export class CoveragePage {
     return result;
   }
 
+  
   movetocontri(){
     this.navCtrl.push(ContributePage);
   }
 
   display(m) {
+  document.getElementById("jas").className =
+    document.getElementById("jas").className.replace(/\bactive\b/,'')
 
     let covType:object;
     let agetype:object;
@@ -68,5 +63,5 @@ export class CoveragePage {
   age(m){
     sessionStorage.setItem("age", m);
   }
-
+  
 }

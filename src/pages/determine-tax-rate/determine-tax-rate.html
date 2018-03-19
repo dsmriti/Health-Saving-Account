@@ -27,13 +27,13 @@
     <ion-row class="btn-grp">
 
       <ion-col col-12 >
-          <button ion-button class="side-r" (click)="display('You Only')"><ion-icon class="single"></ion-icon></button>
+          <button ion-button class="side-r active" id="smriti" (click)="display('Single')"><ion-icon class="single active"></ion-icon></button>
      
-        <button ion-button class="side-b" (click)="display('You + Spouse')"><ion-icon class="double"></ion-icon></button>
+        <button ion-button class="side-b" (click)="display('Married Filing Joint')"><ion-icon class="double"></ion-icon></button>
      
-          <button ion-button color="light" class="side-b active" (click)="display('You + Child(ren)')"><ion-icon class="triple active"></ion-icon></button>
+          <button ion-button class="side-b" (click)="display('Married Filing Separate')"><ion-icon class="triple"></ion-icon></button>
         
-          <button ion-button class="side-l" (click)="display('You + Family')"><ion-icon class="family"></ion-icon></button>
+          <button ion-button class="side-l" (click)="display('Head of Household')"><ion-icon class="family"></ion-icon></button>
         </ion-col>
         <p>{{clickMessage}}</p>
      </ion-row>   

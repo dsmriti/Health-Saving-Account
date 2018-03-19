@@ -15,7 +15,7 @@ import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angul
 })
 export class DetermineTaxRatePage {
 tax_rate: number;
-clickMessage:any;
+clickMessage:any= 'Single';
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public viewCtrl: ViewController) {
   }
@@ -27,6 +27,8 @@ closeModal() {
     this.viewCtrl.dismiss();
   }
   display(m) {
+  document.getElementById("smriti").className =
+    document.getElementById("smriti").className.replace(/\bactive\b/,'')
     this.clickMessage = m;
   }
 }

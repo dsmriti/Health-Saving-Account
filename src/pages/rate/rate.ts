@@ -24,6 +24,7 @@ export class RatePage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad RatePage');
     this.taxbracket(0);
+    
   }
 
   movetomarginal(){
@@ -31,6 +32,8 @@ export class RatePage {
   }
 
   taxbracket(coverageType){
+    let interest_rate = this.rate;
+    let growth_rate = this.growth;
     
   }
 }

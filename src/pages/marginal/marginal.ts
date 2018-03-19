@@ -17,13 +17,29 @@ import { ResultPage } from './../result/result';
   templateUrl: 'marginal.html',
 })
 export class MarginalPage {
- tax_rate: number;
+ tax_rate:any;
+ tax_rate_options:any=[];
+  selected_tax_rate:string="";
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public modalCtrl: ModalController) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MarginalPage');
+    let tax_rate_selected: any;
+    this.tax_rate = JSON.parse(localStorage.getItem("Tax_Brackets"));
+    for(var i=0; i<this.tax_rate.length; i++)
+      this.tax_rate_options.push(this.tax_rate[i]["Tax Rate"])
+    tax_rate_selected = sessionStorage.getItem("tax_rate");
+    if(tax_rate_selected) {
+      this.tax_rate_options.val = tax_rate_selected
+    }
+
+  }
+
+  onSelectTaxoOptions(selectedoption){
+    this.selected_tax_rate = String(selectedoption);
+    sessionStorage.setItem("tax_rate", this.selected_tax_rate);
   }
   openModal(characterNum) {
 

@@ -8,7 +8,7 @@
 
 
 <ion-content class="pane">
-    <form>
+
     <ion-grid padding>
         <label>Current HSA Balance</label>
      <ion-row >
@@ -17,10 +17,10 @@
    <ion-label class="dollar">$</ion-label>
     <ion-input type="number" [value]="current_hsa" (input)="current_hsa=$event.target.value" clearInput=true min="0"[max]="200"></ion-input>
    </ion-item></ion-col>
-       
-       
+
+
    </ion-row>
-   
+
          <ion-row class="border-t">
    <ion-list inset>
        <ion-item class="contri">
@@ -34,16 +34,15 @@
         </ion-row>
         <ion-row>
         <ion-col>
-      
+
         <ion-item>
         <ion-label class="dollar">$</ion-label>
-        <ion-input type="number"  [value]="annual_contri" (input)="annual_contri=$event.target.value"></ion-input>
+        <ion-input type="number" [value]="0" [(ngModel)]="annual_contri_value" (input)="checkanualcontribution()"></ion-input>
       </ion-item>
         </ion-col>
     </ion-row>
-    
+
   </ion-grid>
-</form>
-    <button ion-button block class="nextbtn" (click)="movetowithdrawal()">Next<ion-icon name="arrow-forward"></ion-icon></button>
-    
+  <button ion-button block class="nextbtn" (click)="movetowithdrawal()">Next<ion-icon name="arrow-forward"></ion-icon></button>
+
 </ion-content>

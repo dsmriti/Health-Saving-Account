@@ -11,7 +11,9 @@ import { HomePage } from '../pages/home/home';
 import { WhatIsHsaPage } from '../pages/what-is-hsa/what-is-hsa';
 import { EstimateEligibleExpensesPage } from '../pages/estimate-eligible-expenses/estimate-eligible-expenses';
 import { TestingPage } from '../pages/testing/testing';
+import { TempPage } from '../pages/temp/temp';
 import { WalkthroughPage } from '../pages/walkthrough/walkthrough';
+import * as XLSX from "xlsx";
 
 
 @Component({
@@ -34,6 +36,7 @@ export class MyApp {
       { title: 'What is HSA', component: WhatIsHsaPage },
       { title: 'Estimate Eligible Expenses', component: EstimateEligibleExpensesPage },
       { title: 'testing', component: TestingPage },
+      { title: 'demo', component: TempPage }
 
     ];
     this.pages2 = {
@@ -41,7 +44,8 @@ export class MyApp {
       HomePage: HomePage,
       EstimateEligibleExpensesPage: EstimateEligibleExpensesPage,
       TestingPage: TestingPage,
-    }
+      TempPage: TempPage
+    };
 
     //for walkthrough sliders
     this.presentLoading();
@@ -85,8 +89,10 @@ export class MyApp {
     this.platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
+      this.XLStoJSON();
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+
     });
   }
 
@@ -96,4 +102,35 @@ export class MyApp {
     this.nav.setRoot(page.component);
   }
 
+
+  public XLStoJSON() {
+    return new Promise((resolve, reject) => {
+      var url = 'assets/hsa.xlsx';
+      var oReq = new XMLHttpRequest();
+      var workbook: any;
+      oReq.open("GET", url, true);
+      oReq.responseType = "arraybuffer";
+      oReq.onload = (e) => {
+        if (oReq.status >= 200 && oReq.status < 300) {
+          var arraybuffer = oReq.response;
+          var data = new Uint8Array(arraybuffer);
+          var arr = new Array();
+          for (var i = 0; i != data.length; ++i) arr[i] = String.fromCharCode(data[i]);
+          var bstr = arr.join("");
+          workbook = XLSX.read(bstr, {type: "binary"});
+          for(var j= 0; j < workbook.SheetNames.length; j++) {
+            var worksheetname = workbook.SheetNames[j];
+            var worksheet = workbook.Sheets[worksheetname];
+            var json = XLSX.utils.sheet_to_json(worksheet, {raw: true});
+            localStorage.setItem(worksheetname, JSON.stringify(json));
+          }
+
+          resolve('Finished generating JSON');
+        } else {
+          reject('XMLHttpRequest failed; error code:' + oReq.statusText);
+        }
+      };
+      oReq.send();
+    });
+  }
 }

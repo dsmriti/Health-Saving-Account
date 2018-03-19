@@ -18,12 +18,24 @@ import { RatePage } from './../rate/rate';
   templateUrl: 'withdrawal.html',
 })
 export class WithdrawalPage {
-
+  a:number;
+  b:number;
+  c:number;
+  value: number;
+  total:number;
+  error_message: any;
   constructor(public navCtrl: NavController, public navParams: NavParams,public modalCtrl: ModalController) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad WithdrawalPage');
+    this.a = parseInt(this.navParams.get('data1'));
+    this.b = parseInt(this.navParams.get('data2'));
+    this.c = parseInt(this.navParams.get('data3'));
+    this.total = this.a + this.b + this.c;
+    console.log(this.a);
+    console.log(this.b);
+    console.log(this.c);
   }
   openModal(characterNum) {
 
@@ -32,6 +44,15 @@ export class WithdrawalPage {
   }
   movetorate(){
     this.navCtrl.push(RatePage);
+    var estimated_value = String(this.value);
+    sessionStorage.setItem("estimated_value", estimated_value);
   }
 
+  estimate(){
+    if(this.value > this.total) {
+      console.log("please enter value less than"+ this.total);
+      this.error_message = "please enter value less than "+ this.total;
+    }
+
+  }
 }

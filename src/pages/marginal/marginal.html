@@ -18,23 +18,17 @@
         <ion-row>
               <label>Marginal Tax Rate</label>
     <ion-item>
-    
-      <ion-select [(ngModel)]="tax_rate" submitText="Okay" cancelText="Cancel">
-        <ion-option value="dos">10%</ion-option>
-        <ion-option value="lunix">15%</ion-option>
-        <ion-option value="mac7">25%</ion-option>
-        <ion-option value="mac8">28%</ion-option>
-        <ion-option value="win3.1">33%</ion-option>
-        <ion-option value="win95">38%</ion-option>
-        <ion-option value="win98">39.6%</ion-option>
+
+      <ion-select [(ngModel)]="tax_rate_select" submitText="Okay" cancelText="Cancel" (ionChange)="onSelectTaxoOptions(tax_rate_select)">
+        <ion-option *ngFor="let option of tax_rate_options" value="{{option}}">{{option}}%</ion-option>
       </ion-select>
 </ion-item>
         </ion-row>
         <ion-row (click)="openModal()">
-            <ion-col col-12><p ><ion-icon name="alert"></ion-icon> 
+            <ion-col col-12><p ><ion-icon name="alert"></ion-icon>
         Determine Your Tax Rate</p></ion-col>
         </ion-row>
-         
+
 </ion-grid>
     <button ion-button block class="nextbtn" (click)="movetoresult()">Next<ion-icon name="arrow-forward"></ion-icon></button>
 </ion-content>

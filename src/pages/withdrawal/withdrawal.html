@@ -23,11 +23,11 @@
              <ion-row>
         <ion-col>
     <ion-item>
-         <ion-label class="dollar">$</ion-label>   
-    <ion-input type="number" placeholder="265"></ion-input>
+         <ion-label class="dollar">$</ion-label>
+    <ion-input type="number" [(ngModel)]="value" (input)="estimate()"></ion-input>
    </ion-item></ion-col>
    </ion-row>
-
+   <p>{{error_message}}</p>
     </ion-grid>
      <button ion-button block class="nextbtn" (click)="movetorate()">Next<ion-icon name="arrow-forward"></ion-icon></button>
 </ion-content>

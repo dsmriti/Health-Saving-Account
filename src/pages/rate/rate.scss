@@ -1,13 +1,18 @@
 page-rate {
        .grid{
-         background: $grid-back; 
-             
+         background: $grid-back;
+
      }
     .range-slider{
-        
+
         .range-knob{
             background: #fff100;
         }
     }
- 
+  .display_rate{
+    font-size: 16px;
+    font-weight: 600;
+    color: green;
+  }
+
 }

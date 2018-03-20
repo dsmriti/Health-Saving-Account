@@ -20,11 +20,11 @@
         <ion-label class="label small-text" range-left="0" >0</ion-label>
           <ion-label class="label range-right" range-right="10" >10</ion-label>
       </ion-range>
-         
+
     </ion-item>
             </ion-col>
         </ion-row>
-        <p padding>{{interest_rate}}</p>
+        <p padding class="display_rate"> {{interest_rate}}</p>
         <ion-row class="border-t">
         <label>Account Growth</label>
         </ion-row>
@@ -38,7 +38,7 @@
     </ion-item>
     </ion-col>
   </ion-row>
-  <p padding>{{growth_rate}}</p>
+  <p padding class="display_rate">{{growth_rate}}</p>
     </ion-grid>
      <button ion-button block class="nextbtn" (click)="movetomarginal()">Next<ion-icon name="arrow-forward"></ion-icon></button>
 </ion-content>

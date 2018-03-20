@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component,ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { Chart } from 'chart.js';
 /**
  * Generated class for the ViewGraphPage page.
  *
@@ -18,33 +18,49 @@ export class ViewGraphPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
+  @ViewChild('lineCanvas') lineCanvas;
+
+
+  lineChart: any;
+
+
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad ViewGraphPage');
-  }
-  public barChartOptions:any = {
-    scaleShowVerticalLines: false,
-    responsive: true
-  };
+    this.lineChart = new Chart(this.lineCanvas.nativeElement, {
 
-  //Chart Labels
-  public barChartLabels:string[] = ['2011', '2012', '2013', '2014', '2015', '2016', '2017'];
-  public barChartType:string = 'bar';
-  public barChartLegend:boolean = true;
- 
-  //Chart data
-  public barChartData:any[] = [
-    {data: [66, 55, 83, 82, 56, 51, 43], label: 'Loss'},
-    {data: [29, 38, 40, 21, 82, 30, 89], label: 'Profit'}
-  ];
- 
-  // Chart events
-  public chartClicked(e:any):void {
-    console.log(e);
-  }
 
-  // Chart events
-  public chartHovered(e:any):void {
-    console.log(e);
+      type: 'line',
+      data: {
+        labels: ["January", "February", "March", "April", "May", "June", "July"],
+        datasets: [
+          {
+            label: "My First dataset",
+            fill: false,
+            lineTension: 0.1,
+            backgroundColor: "rgba(75,192,192,0.4)",
+            borderColor: "rgba(75,192,192,1)",
+            borderCapStyle: 'butt',
+            borderDash: [],
+            borderDashOffset: 0.0,
+            borderJoinStyle: 'miter',
+            pointBorderColor: "rgba(75,192,192,1)",
+            pointBackgroundColor: "#fff",
+            pointBorderWidth: 1,
+            pointHoverRadius: 5,
+            pointHoverBackgroundColor: "rgba(75,192,192,1)",
+            pointHoverBorderColor: "rgba(220,220,220,1)",
+            pointHoverBorderWidth: 2,
+            pointRadius: 1,
+            pointHitRadius: 10,
+            data: [65, 59, 80, 81, 56, 55, 40],
+            spanGaps: false,
+          }
+        ]
+      }
+
+    });
+
   }
 
 }

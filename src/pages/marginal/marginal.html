@@ -20,7 +20,7 @@
     <ion-item>
 
       <ion-select [(ngModel)]="tax_rate_select" submitText="Okay" cancelText="Cancel" (ionChange)="onSelectTaxoOptions(tax_rate_select)">
-        <ion-option *ngFor="let option of tax_rate_options" value="{{option}}">{{option}}%</ion-option>
+        <ion-option *ngFor="let option of tax_rate_options" value="{{option}}" [selected]="option === selected_tax_rate">{{option}}%</ion-option>
       </ion-select>
 </ion-item>
         </ion-row>

@@ -15,26 +15,22 @@ import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angul
 })
 export class DetermineTaxRatePage {
 
-  clickMessage:string;
+  clickMessage:any= 'Single';
   tax_rate:any;
   tax_rate_option:any=[];
   selected_tax_rate:string="";
   tax_rate_select:any;
-  
+
   constructor(public navCtrl: NavController, public navParams: NavParams,public viewCtrl: ViewController) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad DetermineTaxRatePage');
     this.tax_rate = JSON.parse(localStorage.getItem("Tax_Brackets"));
-    this.selected_tax_rate = sessionStorage.getItem("tax_rate");
-    console.log(this.tax_rate);
-    console.log(this.selected_tax_rate);
-    this.tax_rate_option.selectedText = this.selected_tax_rate;
+    sessionStorage.removeItem("tax_rate");
   }
   closeModal() {
-    
-    this.viewCtrl.dismiss();
+    this.viewCtrl.dismiss(this.selected_tax_rate);
 
   }
   onSelectTaxoOptions(selectedoption) {
@@ -48,12 +44,9 @@ export class DetermineTaxRatePage {
       this.tax_rate_option.push({
         "selection": this.tax_rate[i][m], "tax_rate_selected": this.tax_rate[i]["Tax Rate"]
       });
-      // document.getElementById("smriti").className =
-      //   document.getElementById("smriti").className.replace(/\bactive\b/,'')
-      //   this.clickMessage = m;
-      this.clickMessage = [m];
     }
-    
+
     console.log(this.tax_rate_option);
+    this.clickMessage = m;
   }
 }

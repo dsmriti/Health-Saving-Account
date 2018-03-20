@@ -50,8 +50,8 @@ export class WithdrawalPage {
 
   estimate(){
     if(this.value > this.total) {
-      console.log("please enter value less than"+ this.total);
-      this.error_message = "please enter value less than "+ this.total;
+      console.log("Please enter value less than"+ this.total);
+      this.error_message = "Please enter value less than "+ this.total;
     }
 
   }

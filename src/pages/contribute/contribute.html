@@ -37,11 +37,11 @@
 
         <ion-item>
         <ion-label class="dollar">$</ion-label>
-        <ion-input type="number" [value]="0" [(ngModel)]="annual_contri_value" (input)="checkanualcontribution()"></ion-input>
+        <ion-input type="number" [value]="" [(ngModel)]="annual_contri_value" (input)="checkanualcontribution()"></ion-input>
       </ion-item>
         </ion-col>
     </ion-row>
-    <p padding>{{exceed_value}}</p>
+      <p padding class="exceed-value-text">{{exceed_value}}</p>
   </ion-grid>
   <button ion-button block class="nextbtn" (click)="movetowithdrawal()">Next<ion-icon name="arrow-forward"></ion-icon></button>
 

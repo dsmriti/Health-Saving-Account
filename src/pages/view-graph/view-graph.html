@@ -15,18 +15,14 @@
 
 <ion-content >
     <ion-grid padding>
-<h2>Business Charts</h2>
-          <div>
-              <div style="display: block">
-                <canvas baseChart height="350"
-                        [datasets]="barChartData"
-                        [labels]="barChartLabels"
-                        [options]="barChartOptions"
-                        [legend]="barChartLegend"
-                        [chartType]="barChartType"
-                        (chartHover)="chartHovered($event)"
-                        (chartClick)="chartClicked($event)"></canvas>
-              </div>
-            </div>   
+<h2>Contribution Growth</h2>
+      <ion-card>
+        <!--<ion-card-header>-->
+          <!--Line Chart-->
+        <!--</ion-card-header>-->
+        <ion-card-content>
+          <canvas #lineCanvas></canvas>
+        </ion-card-content>
+      </ion-card>
     </ion-grid>
 </ion-content>

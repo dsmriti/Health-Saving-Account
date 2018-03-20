@@ -1,21 +1,21 @@
 page-coverage {
-    
-      
-    
+
+
+
         .grid{
              background: $grid-back;
          }
            .btn-grp{
-            button[ng-reflect-color="light"] ion-icon.single{ 
+            button[ng-reflect-color="light"] ion-icon.single{
                 background-position: 8px -47px;
               }
-              button[ng-reflect-color="light"] ion-icon.double{ 
+              button[ng-reflect-color="light"] ion-icon.double{
                 background-position: -72px -47px;
               }
-              button[ng-reflect-color="light"] ion-icon.triple{ 
+              button[ng-reflect-color="light"] ion-icon.triple{
                 background-position: -154px -47px;
               }
-              button[ng-reflect-color="light"] ion-icon.family{ 
+              button[ng-reflect-color="light"] ion-icon.family{
                 background-position: -236px -47px;
               }
             .button-default{
@@ -24,12 +24,12 @@ page-coverage {
                 font-weight: $bold;
                 min-height: 40px;
                       }
-    
+
             ion-icon{
                  height: 30px;
             width: 50px;
             }
-    
+
         .single{
             background: url('../assets/icon/user-icons.png') 8px 0px;
         }
@@ -60,9 +60,13 @@ page-coverage {
                 background-position: -154px -47px;
         }
             }
-    
-            }
+
+
+           }
+    .coverage-text{
+      font-size: 16px;
+      font-weight: 600;
     }
-    
-    
-    
+    }
+
+

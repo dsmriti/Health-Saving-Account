@@ -19,21 +19,22 @@ import { ResultPage } from './../result/result';
 export class MarginalPage {
  tax_rate:any;
  tax_rate_options:any=[];
-  selected_tax_rate:string="";
+ selected_tax_rate:string="";
+ tax_rate_select:any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public modalCtrl: ModalController) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MarginalPage');
+
     let tax_rate_selected: any;
     this.tax_rate = JSON.parse(localStorage.getItem("Tax_Brackets"));
     for(var i=0; i<this.tax_rate.length; i++)
       this.tax_rate_options.push(this.tax_rate[i]["Tax Rate"])
-    tax_rate_selected = sessionStorage.getItem("tax_rate");
-    if(tax_rate_selected) {
-      this.tax_rate_options.val = tax_rate_selected
-    }
+    this.selected_tax_rate = sessionStorage.getItem("tax_rate");
+    console.log("Got From Session Storage " + this.selected_tax_rate);
+    this.tax_rate_select = this.selected_tax_rate;
 
   }
 
@@ -45,6 +46,11 @@ export class MarginalPage {
 
     let modal = this.modalCtrl.create(DetermineTaxRatePage, characterNum);
     modal.present();
+    modal.onDidDismiss(data => {
+      console.log("Data =>", data);
+      this.tax_rate_select = data;
+      this.selected_tax_rate = data;
+    })
   }
  movetoresult(){
     this.navCtrl.push(ResultPage);

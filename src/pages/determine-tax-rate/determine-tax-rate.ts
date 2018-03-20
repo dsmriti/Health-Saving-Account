@@ -15,12 +15,12 @@ import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angul
 })
 export class DetermineTaxRatePage {
 
-  clickMessage:any= 'Single';
+  clickMessage:any;
   tax_rate:any;
   tax_rate_option:any=[];
   selected_tax_rate:string="";
   tax_rate_select:any;
-
+  
   constructor(public navCtrl: NavController, public navParams: NavParams,public viewCtrl: ViewController) {
   }
 
@@ -33,6 +33,7 @@ export class DetermineTaxRatePage {
     this.tax_rate_option.selectedText = this.selected_tax_rate;
   }
   closeModal() {
+    
     this.viewCtrl.dismiss();
 
   }

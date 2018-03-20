@@ -15,7 +15,7 @@
         <ion-col col-12>
     <ion-item>
    <ion-label class="dollar">$</ion-label>
-    <ion-input type="number" [value]="current_hsa" (input)="current_hsa=$event.target.value" clearInput=true min="0"[max]="200"></ion-input>
+    <ion-input type="number" [value]="current_hsa" (input)="current_hsa=$event.target.value" ></ion-input>
    </ion-item></ion-col>
 
 
@@ -41,7 +41,7 @@
       </ion-item>
         </ion-col>
     </ion-row>
-
+    <p padding>{{exceed_value}}</p>
   </ion-grid>
   <button ion-button block class="nextbtn" (click)="movetowithdrawal()">Next<ion-icon name="arrow-forward"></ion-icon></button>
 

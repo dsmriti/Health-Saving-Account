@@ -15,25 +15,31 @@ import { MarginalPage } from './../marginal/marginal';
   templateUrl: 'rate.html',
 })
 export class RatePage {
-  rate: number = 0;
-  growth: number = 0;
+  interest_rate:any;
+  growth_rate: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad RatePage');
-    this.taxbracket(0);
+   
     
   }
 
   movetomarginal(){
     this.navCtrl.push(MarginalPage);
   }
-
-  taxbracket(coverageType){
-    let interest_rate = this.rate;
-    let growth_rate = this.growth;
-    
+  public rate(selecterate) {
+    this.interest_rate = String(selecterate);
+    //sessionStorage.setItem("interest_rate", this.interest_rate);
+    console.log(selecterate);
   }
+  public growth(selectedgrowth){
+    this.growth_rate = String(selectedgrowth);
+    //sessionStorage.setItem("interest_rate", this.interest_rate);
+    console.log(selectedgrowth);
+
+  }
+ 
 }

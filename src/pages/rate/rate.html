@@ -16,29 +16,29 @@
         <ion-row>
     <ion-col col-12>
        <ion-item>
-      <ion-range min="0" max="10" pin="true" [(ngModel)]="rate" color="secondary">
-        <ion-label class="label small-text" range-left="0">0</ion-label>
-          <ion-label class="label range-right" range-right="10">10</ion-label>
+      <ion-range min="0" max="10" pin="true" color="secondary" [(ngModel)]="interest_rate" (ionChange)="rate(interest_rate)">
+        <ion-label class="label small-text" range-left="0" >0</ion-label>
+          <ion-label class="label range-right" range-right="10" >10</ion-label>
       </ion-range>
          
     </ion-item>
             </ion-col>
         </ion-row>
-        <p padding>{{rate}}</p>
+        <p padding>{{interest_rate}}</p>
         <ion-row class="border-t">
         <label>Account Growth</label>
         </ion-row>
               <ion-row>
     <ion-col col-12>
          <ion-item>
-      <ion-range min="1" max="50" pin="true" [(ngModel)]="growth" color="secondary">
+      <ion-range min="1" max="50" pin="true" [(ngModel)]="growth_rate" color="secondary" (ionChange)="growth(growth_rate)">
         <ion-label class="label small-text" range-left="0">0</ion-label>
           <ion-label class="label range-right" range-right="50">50</ion-label>
       </ion-range>
     </ion-item>
     </ion-col>
   </ion-row>
-  <p padding>{{growth}}</p>
+  <p padding>{{growth_rate}}</p>
     </ion-grid>
      <button ion-button block class="nextbtn" (click)="movetomarginal()">Next<ion-icon name="arrow-forward"></ion-icon></button>
 </ion-content>

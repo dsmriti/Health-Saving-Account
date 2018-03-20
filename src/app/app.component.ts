@@ -11,7 +11,7 @@ import { HomePage } from '../pages/home/home';
 import { WhatIsHsaPage } from '../pages/what-is-hsa/what-is-hsa';
 import { EstimateEligibleExpensesPage } from '../pages/estimate-eligible-expenses/estimate-eligible-expenses';
 import { TestingPage } from '../pages/testing/testing';
-import { TempPage } from '../pages/temp/temp';
+
 import { WalkthroughPage } from '../pages/walkthrough/walkthrough';
 import * as XLSX from "xlsx";
 
@@ -36,7 +36,7 @@ export class MyApp {
       { title: 'What is HSA', component: WhatIsHsaPage },
       { title: 'Estimate Eligible Expenses', component: EstimateEligibleExpensesPage },
       { title: 'testing', component: TestingPage },
-      { title: 'demo', component: TempPage }
+     
 
     ];
     this.pages2 = {
@@ -44,7 +44,7 @@ export class MyApp {
       HomePage: HomePage,
       EstimateEligibleExpensesPage: EstimateEligibleExpensesPage,
       TestingPage: TestingPage,
-      TempPage: TempPage
+     
     };
 
     //for walkthrough sliders

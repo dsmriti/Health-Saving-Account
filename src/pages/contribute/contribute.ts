@@ -22,6 +22,7 @@ export class ContributePage {
   above_55:number;
   under_55:number;
   annual_contri_value:number=0;
+  exceed_value:any;
   ionViewDidLoad() {
 
     console.log('ionViewDidLoad ContributePage');
@@ -54,7 +55,8 @@ export class ContributePage {
   checkanualcontribution() {
     console.log(this.annual_contri_value);
     if (this.annual_contri_value > this.annual_contri) {
-      console.log("Value Excceded");
+      console.log("Value Excceded ");
+      this.exceed_value = "Please enter value less than "+ this.annual_contri;
     }
   }
 

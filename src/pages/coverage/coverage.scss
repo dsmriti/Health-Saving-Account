@@ -1,50 +1,68 @@
 page-coverage {
-    .grid{
-         background: $grid-back;
-     }
-       .btn-grp{
-        .button-default{
-        padding: 10px 15px;
-            font-size: $fsize;
-            font-weight: $bold;
-            min-height: 40px;
-                  }
-
-        ion-icon{
-             height: 30px;
-        width: 50px;
+    
+      
+    
+        .grid{
+             background: $grid-back;
+         }
+           .btn-grp{
+            button[ng-reflect-color="light"] ion-icon.single{ 
+                background-position: 8px -47px;
+              }
+              button[ng-reflect-color="light"] ion-icon.double{ 
+                background-position: -72px -47px;
+              }
+              button[ng-reflect-color="light"] ion-icon.triple{ 
+                background-position: -154px -47px;
+              }
+              button[ng-reflect-color="light"] ion-icon.family{ 
+                background-position: -236px -47px;
+              }
+            .button-default{
+            padding: 10px 15px;
+                font-size: $fsize;
+                font-weight: $bold;
+                min-height: 40px;
+                      }
+    
+            ion-icon{
+                 height: 30px;
+            width: 50px;
+            }
+    
+        .single{
+            background: url('../assets/icon/user-icons.png') 8px 0px;
         }
-
-    .single{
-        background: url('../assets/icon/user-icons.png') 8px 0px;
-    }
-    .double{
-         background: url('../assets/icon/user-icons.png');
-        background-position: -72px 0;
-    }
-        .triple{
-         background: url('../assets/icon/user-icons.png');
-        background-position: -154px 0;
-    }
-        .family{
-         background: url('../assets/icon/user-icons.png');
-        background-position: -236px 0;
-    }
-         .button-default.active, .button-default:hover{
-        background: #fff000;
-              .single{
-        background-position: 8px -47px;
-    }
-             .family{
-        background-position: -236px -47px;
-    }
-             .double{
-        background-position: -72px -47px;
-    }
-        .triple{
-            background-position: -154px -47px;
-    }
+        .double{
+             background: url('../assets/icon/user-icons.png');
+            background-position: -72px 0;
         }
-
+            .triple{
+             background: url('../assets/icon/user-icons.png');
+            background-position: -154px 0;
         }
-}
+            .family{
+             background: url('../assets/icon/user-icons.png');
+            background-position: -236px 0;
+        }
+             .button-default.active, .button-default:hover{
+            background: #fff000;
+                  .single{
+            background-position: 8px -47px;
+        }
+                 .family{
+            background-position: -236px -47px;
+        }
+                 .double{
+            background-position: -72px -47px;
+        }
+            .triple{
+                background-position: -154px -47px;
+        }
+            }
+    
+            }
+    }
+    
+    
+    

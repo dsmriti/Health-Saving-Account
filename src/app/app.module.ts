@@ -18,7 +18,7 @@ import { MarginalPage } from '../pages/marginal/marginal';
 import { DetermineTaxRatePage } from '../pages/determine-tax-rate/determine-tax-rate';
 import { ResultPage } from '../pages/result/result';
 import { TestingPage } from '../pages/testing/testing';
-import { TempPage } from '../pages/temp/temp';
+
 import { ViewGraphPage } from '../pages/view-graph/view-graph';
 import { WalkthroughPage } from '../pages/walkthrough/walkthrough';
 import { CommonModule } from '@angular/common';
@@ -48,7 +48,7 @@ import { IonicStorageModule } from '@ionic/storage';
     ResultPage,
     ViewGraphPage,
     TestingPage,
-    TempPage,
+   
     WalkthroughPage
   ],
   imports: [
@@ -76,7 +76,7 @@ import { IonicStorageModule } from '@ionic/storage';
     ResultPage,
     ViewGraphPage,
     TestingPage,
-    TempPage,
+ 
     WalkthroughPage
   ],
   providers: [

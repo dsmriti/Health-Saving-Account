@@ -15,7 +15,7 @@ import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angul
 })
 export class DetermineTaxRatePage {
 
-  clickMessage:any;
+  clickMessage:string;
   tax_rate:any;
   tax_rate_option:any=[];
   selected_tax_rate:string="";
@@ -51,8 +51,9 @@ export class DetermineTaxRatePage {
       // document.getElementById("smriti").className =
       //   document.getElementById("smriti").className.replace(/\bactive\b/,'')
       //   this.clickMessage = m;
-
+      this.clickMessage = [m];
     }
+    
     console.log(this.tax_rate_option);
   }
 }

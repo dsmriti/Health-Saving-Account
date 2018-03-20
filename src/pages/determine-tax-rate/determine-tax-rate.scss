@@ -3,6 +3,19 @@ page-determine-tax-rate {
          background: $grid-back;
      }
       .btn-grp{
+        
+            button[ng-reflect-color="light"] ion-icon.single{ 
+                background-position: 8px -47px;
+              }
+              button[ng-reflect-color="light"] ion-icon.double{ 
+                background-position: -72px -47px;
+              }
+              button[ng-reflect-color="light"] ion-icon.triple{ 
+                background-position: -154px -47px;
+              }
+              button[ng-reflect-color="light"] ion-icon.family{ 
+                background-position: -236px -47px;
+              }
         .button-default{
         padding: 10px 15px;
             font-size: $fsize;

@@ -23,20 +23,27 @@ export class ContributePage {
   under_55:number;
   annual_contri_value:number=0;
   exceed_value:any;
+  coverageType: any;
+  age: any;
+  data4 : any;
+  data5: any ;
+
   ionViewDidLoad() {
 
     console.log('ionViewDidLoad ContributePage');
-    let coverageType: any;
-    let age: any;
+   // console.log(this.navParams);
     let tiersSeedMoney: Object;
-    coverageType = sessionStorage.getItem("coverageType");
-    age = sessionStorage.getItem("age");
-    tiersSeedMoney = this.companyContribution(coverageType,age);
+    this.coverageType = parseInt(sessionStorage.getItem("coverageType"));
+    this.age = parseInt(sessionStorage.getItem("age"));
+
+    tiersSeedMoney = this.companyContribution(this.coverageType,this.age);
     console.log(tiersSeedMoney);
-    this.company_contri = this.companyContribution(coverageType, age);
+    this.company_contri = this.companyContribution(this.coverageType, this.age);
     console.log(this.above_55);
     console.log(this.under_55);
-     }
+    console.log(this.age);
+    console.log(this.coverageType);
+  }
 
   openModal(characterNum){
     let modal = this.modalCtrl.create(ContriModalPage, characterNum);
@@ -44,12 +51,19 @@ export class ContributePage {
   }
 
   movetowithdrawal(){
+    console.log(this.coverageType);
     this.navCtrl.push(WithdrawalPage,{
       data1:this.current_hsa,
       data2:this.company_contri,
-      data3:this.annual_contri_value
-
+      data3:this.annual_contri_value,
     });
+    var current_hsa_input = String(this.current_hsa);
+    sessionStorage.setItem("current_hsa_input", current_hsa_input);
+    var company_contribution = String(this.company_contri);
+    sessionStorage.setItem("company_contribution", company_contribution);
+    var annual_contri = String(this.annual_contri_value);
+    sessionStorage.setItem("annual_contri", annual_contri);
+   
   }
 
   checkanualcontribution() {
@@ -60,17 +74,15 @@ export class ContributePage {
     }
   }
 
-  getvaluesfromjson() {
-
-  }
-
   companyContribution(yourCoverageType, yourAge){
 
     let Tiers_SeedMoney_Limits = JSON.parse(localStorage.getItem("Tiers_SeedMoney_Limits"));
-    let irsCatchup: number;
     let companyContri = Tiers_SeedMoney_Limits[yourCoverageType].input_cocontribSQL;
     let irsLimit = Tiers_SeedMoney_Limits[yourCoverageType].input_IRSreglimitSQL;
-    irsCatchup = Tiers_SeedMoney_Limits[yourCoverageType].input_IRScatchupSQL;
+    var irsLimit_input = String(irsLimit);
+    sessionStorage.setItem("irsLimit_input", irsLimit_input);
+    let irsCatchup = Tiers_SeedMoney_Limits[yourCoverageType].input_IRScatchupSQL;
+    
     var result;
     if(yourAge == 1){
       this.annual_contri = companyContri + irsLimit + irsCatchup;
@@ -78,7 +90,10 @@ export class ContributePage {
       irsCatchup = 0;
       this.annual_contri = companyContri + irsLimit;
     }
-     return companyContri;
+    var irsCatchup_input = String(irsCatchup);
+    sessionStorage.setItem("irsCatchup_input", irsCatchup_input);
+    return companyContri;
+    
   }
 
 }

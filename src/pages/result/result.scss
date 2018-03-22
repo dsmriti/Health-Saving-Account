@@ -5,38 +5,37 @@ page-result {
          .card {
              background: #f3f3f3;
                  box-shadow: -3px 4px 8px rgba(0, 0, 0, 0.3);
-    margin: 15px;
+                 margin: 15px;
          }
          .card1{
              background: #f3f3f3 url(../assets/icon/icon-total.jpg) no-repeat;
              .card-header{
-                     margin-left: 105px;
-    text-align: center;
+                 margin-left: 105px;
+                 text-align: center;
                  color: #9e37a4;
                  font-size: 16px;
                  text-overflow: inherit;
                  width: 60%;
                  word-break: normal;
-                     white-space: normal;
+                 white-space: normal;
                  padding: 25px 10px;
                  div{
                       color: #d7ae30;
-                 font-size: 32px;
-
-                 }
+                      font-size: 32px;
+                    }
              }
          }
            .card2{
              background: #f3f3f3 url(../assets/icon/icon-contri-interest.jpg) repeat-y;
                  .card-header{
-                     margin-left: 105px;
+                 margin-left: 105px;
                  color: #852214;
                  font-size: 16px;
                  text-overflow: inherit;
                  width: 65%;
                  word-break: normal;
-                     white-space: normal;
-    text-align: left;
+                white-space: normal;
+                text-align: left;
                  padding: 8px 10px 6px 20px;
                  span{
                       color: #91a435;
@@ -45,7 +44,7 @@ page-result {
                  .plus{ font-size: 40px;
                      font-weight: bolder;
                       color: #852214;
-                        text-align: right;
+                    text-align: right;
                      margin: -14px 72px -47px 10px;
                      }
                      .right{ text-align: right;}
@@ -54,14 +53,14 @@ page-result {
            .card3{
              background: #f3f3f3 url(../assets/icon/icon-savingl.jpg) no-repeat;
                  .card-header{
-                     margin-left: 105px;
-    text-align: center;
+                 margin-left: 105px;
+                 text-align: center;
                  color: #17737c;
                  font-size: 20px;
                  text-overflow: inherit;
                  width: 65%;
                  word-break: normal;
-                     white-space: normal;
+                 white-space: normal;
                  padding: 25px 10px;
                  div{
                       color: #ff6a00;

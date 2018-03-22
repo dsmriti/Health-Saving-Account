@@ -3,15 +3,6 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ContributePage } from './../contribute/contribute';
 import { SharedataProvider } from '../../providers/sharedata/sharedata';
 
-
-
-/**
- * Generated class for the CoveragePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-coverage',
@@ -21,18 +12,11 @@ export class CoveragePage {
 
   clickMessage:string = 'You Only';
   public serviceData: any;
-
-
-  constructor(public navCtrl: NavController, public navParams: NavParams, public shareDataProvider: SharedataProvider) {
-
-  }
+  
+  constructor(public navCtrl: NavController, public navParams: NavParams, public shareDataProvider: SharedataProvider) {}
 
   async ionViewDidLoad() {
-    
-
-   
-
-  }
+    }
 
   private buttonColor0: string = "light";
   private buttonColor1: string = "";
@@ -47,8 +31,6 @@ export class CoveragePage {
     for(var i= 0; i< data.length; i++) result+=data[i];
     return result;
   }
-
-  
   movetocontri(){
     this.navCtrl.push(ContributePage);
   }
@@ -94,7 +76,7 @@ export class CoveragePage {
       "1": "55 and Above 55"
     };
 
-    sessionStorage.setItem("coverageType", m);
+   sessionStorage.setItem("coverageType", m);
     this.clickMessage = covType[m];
   }
 
@@ -107,11 +89,6 @@ export class CoveragePage {
       this.buttonColor1 = "light";
       this.buttonColor0 = "";
     }
-    
     sessionStorage.setItem("age", m);
   }
-
-  
 }
-
-

@@ -31,7 +31,6 @@ export class DetermineTaxRatePage {
   }
   closeModal() {
     this.viewCtrl.dismiss(this.selected_tax_rate);
-
   }
   onSelectTaxoOptions(selectedoption) {
     this.selected_tax_rate = String(selectedoption);
@@ -45,7 +44,6 @@ export class DetermineTaxRatePage {
         "selection": this.tax_rate[i][m], "tax_rate_selected": this.tax_rate[i]["Tax Rate"]
       });
     }
-
     console.log(this.tax_rate_option);
     this.clickMessage = m;
   }

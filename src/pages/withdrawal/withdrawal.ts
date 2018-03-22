@@ -38,7 +38,6 @@ export class WithdrawalPage {
     console.log(this.c);
   }
   openModal(characterNum) {
-
     let modal = this.modalCtrl.create(ExpenseModalPage, characterNum);
     modal.present();
   }
@@ -50,9 +49,8 @@ export class WithdrawalPage {
 
   estimate(){
     if(this.value > this.total) {
-      console.log("Please enter value less than"+ this.total);
+      console.log("Please enter value less than "+ this.total);
       this.error_message = "Please enter value less than "+ this.total;
     }
-
   }
 }

@@ -2,8 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
-
-
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { CoveragePage } from '../pages/coverage/coverage';
@@ -17,8 +15,6 @@ import { RatePage } from '../pages/rate/rate';
 import { MarginalPage } from '../pages/marginal/marginal';
 import { DetermineTaxRatePage } from '../pages/determine-tax-rate/determine-tax-rate';
 import { ResultPage } from '../pages/result/result';
-import { TestingPage } from '../pages/testing/testing';
-
 import { ViewGraphPage } from '../pages/view-graph/view-graph';
 import { WalkthroughPage } from '../pages/walkthrough/walkthrough';
 import { CommonModule } from '@angular/common';
@@ -29,7 +25,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { SharedataProvider } from '../providers/sharedata/sharedata';
 import { IonicStorageModule } from '@ionic/storage';
-
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -47,8 +43,6 @@ import { IonicStorageModule } from '@ionic/storage';
     DetermineTaxRatePage,
     ResultPage,
     ViewGraphPage,
-    TestingPage,
-   
     WalkthroughPage
   ],
   imports: [
@@ -56,9 +50,9 @@ import { IonicStorageModule } from '@ionic/storage';
     IonicModule.forRoot(MyApp),
     ChartsModule,
     CommonModule,
-    IonicStorageModule.forRoot()
-
-  ],
+    IonicStorageModule.forRoot(),
+    HttpModule
+    ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
@@ -75,8 +69,6 @@ import { IonicStorageModule } from '@ionic/storage';
     DetermineTaxRatePage,
     ResultPage,
     ViewGraphPage,
-    TestingPage,
- 
     WalkthroughPage
   ],
   providers: [
@@ -85,8 +77,7 @@ import { IonicStorageModule } from '@ionic/storage';
     File,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     SharedataProvider,
-
-  ]
+   ]
 })
 export class AppModule {
 

@@ -3,15 +3,10 @@ import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { LoadingController } from 'ionic-angular';
-// import { SecureStorage, SecureStorageObject } from '@ionic-native/secure-storage';
 import { Storage } from '@ionic/storage';
-
-
 import { HomePage } from '../pages/home/home';
 import { WhatIsHsaPage } from '../pages/what-is-hsa/what-is-hsa';
 import { EstimateEligibleExpensesPage } from '../pages/estimate-eligible-expenses/estimate-eligible-expenses';
-import { TestingPage } from '../pages/testing/testing';
-
 import { WalkthroughPage } from '../pages/walkthrough/walkthrough';
 import * as XLSX from "xlsx";
 
@@ -35,16 +30,11 @@ export class MyApp {
       { title: 'Home', component: HomePage },
       { title: 'What is HSA', component: WhatIsHsaPage },
       { title: 'Estimate Eligible Expenses', component: EstimateEligibleExpensesPage },
-      { title: 'testing', component: TestingPage },
-     
-
-    ];
+     ];
     this.pages2 = {
       WhatIsHsaPage: WhatIsHsaPage,
       HomePage: HomePage,
       EstimateEligibleExpensesPage: EstimateEligibleExpensesPage,
-      TestingPage: TestingPage,
-     
     };
 
     //for walkthrough sliders
@@ -66,21 +56,13 @@ export class MyApp {
         this.loader.dismiss();
 
       });
-
-
-      // })
-
-
-
-    });
-
-  }
+    // })
+ });
+}
   presentLoading() {
-
-    this.loader = this.loadingCtrl.create({
+  this.loader = this.loadingCtrl.create({
       content: "Loading..."
     });
-
     this.loader.present();
 
   }
@@ -102,8 +84,7 @@ export class MyApp {
     this.nav.setRoot(page.component);
   }
 
-
-  public XLStoJSON() {
+    public XLStoJSON() {
     return new Promise((resolve, reject) => {
       var url = 'assets/hsa.xlsx';
       var oReq = new XMLHttpRequest();

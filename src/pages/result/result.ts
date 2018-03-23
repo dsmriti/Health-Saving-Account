@@ -23,8 +23,8 @@ export class ResultPage {
   }
  movetograph(){
     this.navCtrl.push(ViewGraphPage,{
-      
-    });
+      data:this.outputs
+      });
   }
 
   getdata(){

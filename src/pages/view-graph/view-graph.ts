@@ -8,21 +8,35 @@ import { Chart } from 'chart.js';
   templateUrl: 'view-graph.html',
 })
 export class ViewGraphPage {
-
+  result:any;
+  years:  string[] = [];
+  hsaBalnc: string[] = [];
+  
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+  }
+ public my(){
+    let num = 0;
+    while (num <= 49&&this.result.output_growtharray[num]!='') {
+      this.years.push(num+" Years");
+      this.hsaBalnc.push(this.result.output_growtharray[num]);
+      num++;
+      }
   }
 
   @ViewChild('lineCanvas') lineCanvas;
   lineChart: any;
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ViewGraphPage');
+    this.result = this.navParams.get('data');
+    console.log(this.hsaBalnc);
+    console.log(this.years);
+    this.my();
     this.lineChart = new Chart(this.lineCanvas.nativeElement, {
     type: 'line',
       data: {
-        labels: ["January", "February", "March", "April", "May", "June", "July"],
+        labels:this.years,
         datasets: [
           {
-            label: "My First dataset",
+            label: "HSA",
             fill: false,
             lineTension: 0.1,
             backgroundColor: "rgba(75,192,192,0.4)",
@@ -40,14 +54,16 @@ export class ViewGraphPage {
             pointHoverBorderWidth: 2,
             pointRadius: 1,
             pointHitRadius: 10,
-            data: [65, 59, 80, 81, 56, 55, 40],
+            data: this.hsaBalnc,
             spanGaps: false,
           }
         ]
       }
 
     });
-
+   
+    
   }
+ 
 
 }

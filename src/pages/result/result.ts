@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ViewGraphPage } from './../view-graph/view-graph';
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { Http } from '@angular/http';
 import {Headers, RequestOptions} from '@angular/http';
 import 'rxjs/add/operator/map';
 
@@ -13,16 +13,18 @@ import 'rxjs/add/operator/map';
   templateUrl: 'result.html',
 })
 export class ResultPage {
-  outputs:any;
+  outputs:Object;
   constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ResultPage');
-    console.log(this.getdata());
+   this.getdata();
   }
  movetograph(){
-    this.navCtrl.push(ViewGraphPage);
+    this.navCtrl.push(ViewGraphPage,{
+      
+    });
   }
 
   getdata(){

@@ -5,30 +5,30 @@
 </ion-header>
 
 <ion-content >
-  <!-- <div *ngFor="let p of outputs;"></div> -->
+
   <ion-grid padding>
     <ion-card class="card1">
       <ion-card-header>
       <strong>Total Potential Value:
-          <div>$42,929</div></strong>
+          <div>${{outputs?.output_totoverall}}</div></strong>
       </ion-card-header>
     </ion-card>
 
     <ion-card class="card2">
           <ion-card-header>
-    <strong>Contributions <span>$454</span>
+    <strong>Contributions <span>${{outputs?.output_totcontrib}}</span>
         <div class="plus">+</div> <br />
-        <div class="right">Interest <span>$10,997</span></div></strong>
+        <div class="right">Interest <span>${{outputs?.output_totinterest}}</span></div></strong>
     </ion-card-header>
     </ion-card>
     
   <ion-card class="card3">
     <ion-card-header>
     <strong>Pre-Tax Savings: 
-        <div>$12,020</div></strong>
+        <div>${{outputs?.output_totpretax}}</div></strong>
     </ion-card-header>
   </ion-card> 
-  <!-- <p>{{outputs.output_totcontrib}}</p>   -->
+
 </ion-grid>
 <button ion-button block class="nextbtn" (click)="movetograph()">View Graph</button>
 </ion-content>

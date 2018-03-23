@@ -1,12 +1,6 @@
 import { Component,ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Chart } from 'chart.js';
-/**
- * Generated class for the ViewGraphPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -19,18 +13,11 @@ export class ViewGraphPage {
   }
 
   @ViewChild('lineCanvas') lineCanvas;
-
-
   lineChart: any;
-
-
-
   ionViewDidLoad() {
     console.log('ionViewDidLoad ViewGraphPage');
     this.lineChart = new Chart(this.lineCanvas.nativeElement, {
-
-
-      type: 'line',
+    type: 'line',
       data: {
         labels: ["January", "February", "March", "April", "May", "June", "July"],
         datasets: [

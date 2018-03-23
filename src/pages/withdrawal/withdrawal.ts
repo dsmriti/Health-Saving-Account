@@ -4,14 +4,6 @@ import { ExpenseModalPage } from './../expense-modal/expense-modal';
 import { ModalController } from 'ionic-angular';
 import { RatePage } from './../rate/rate';
 
-
-/**
- * Generated class for the WithdrawalPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-withdrawal',
@@ -26,7 +18,6 @@ export class WithdrawalPage {
   error_message: any;
   constructor(public navCtrl: NavController, public navParams: NavParams,public modalCtrl: ModalController) {
   }
-
   ionViewDidLoad() {
     console.log('ionViewDidLoad WithdrawalPage');
     this.a = parseInt(this.navParams.get('data1'));

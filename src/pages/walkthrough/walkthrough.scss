@@ -1,10 +1,23 @@
 page-walkthrough {
-    .splash-slider{
-        background: #000 !important;
-        img{            
-            position: absolute;
-            top:0;
-            right: 0;
-        }
+    // .splash-slider{
+    //     background: #000 !important;
+    //     img{            
+    //         position: absolute;
+    //         top:-10%;
+    //         right: 0;
+    //         background-size: cover;
+    //         background: #000 !important;
+    //     }
+        ion-slide {
+            background-color: #222;
+          }
+       
+          ion-slide img {
+            height: 100vh !important;
+            width: auto !important;
+          }
+           .goto{
+            margin-bottom: 25%;
+          }
     }
-}
+

@@ -36,6 +36,8 @@ export class CoveragePage {
   }
 
   display(m) {
+  
+    
     if(m==0){
       this.coveragelvl0 = "light";
       this.coveragelvl1 = "";

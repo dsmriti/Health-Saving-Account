@@ -15,9 +15,9 @@
   <ion-grid padding>
     <label>Your Age</label>
     <ion-row class="btn-grp">
-      <ion-col col-12>
-          <button ion-button [color]="buttonColor0" class="side-r" (click)="age(0)">Under 55</button>
-          <button ion-button [color]="buttonColor1" class="side-l" (click)="age(1)">Above 55</button>
+      <ion-col col-12 >
+          <button ion-button [color]="buttonColor0" class="my-width" (click)="age(0)">Under 55</button>
+          <button ion-button [color]="buttonColor1" class="my-width"  (click)="age(1)">Above 55</button>
       </ion-col>
     </ion-row>
 
@@ -27,13 +27,13 @@
     <ion-row class="btn-grp">
 
       <ion-col col-12 >
-        <button ion-button [color]="coveragelvl0"  class="side-r" (click)="display(0)" ><ion-icon class="single"></ion-icon></button>
+        <button ion-button [color]="coveragelvl0"  class="side-r butn-width" (click)="display(0)" ><ion-icon class="single"></ion-icon></button>
 
-        <button ion-button [color]="coveragelvl1" class="side-b" (click)="display(1)" ><ion-icon class="double"></ion-icon></button>
+        <button ion-button [color]="coveragelvl1" class="side-b butn-width" (click)="display(1)" ><ion-icon class="double"></ion-icon></button>
 
-          <button ion-button [color]="coveragelvl2" class="side-b " (click)="display(2)" ><ion-icon class="triple"></ion-icon></button>
+          <button ion-button [color]="coveragelvl2" class="side-b butn-width " (click)="display(2)" ><ion-icon class="triple"></ion-icon></button>
 
-          <button ion-button [color]="coveragelvl3" class="side-l" (click)="display(3)"><ion-icon class="family"></ion-icon></button>
+          <button ion-button [color]="coveragelvl3" class="side-l butn-width" (click)="display(3)"><ion-icon class="family"></ion-icon></button>
         </ion-col>
         <p padding class="coverage-text">{{clickMessage}}</p>
      </ion-row>

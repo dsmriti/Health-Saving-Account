@@ -83,7 +83,7 @@ export class ContributePage {
     sessionStorage.setItem("irsLimit_input", irsLimit_input);
     let irsCatchup = Tiers_SeedMoney_Limits[yourCoverageType].input_IRScatchupSQL;
     
-    var result;
+    
     if(yourAge == 1){
       this.annual_contri = companyContri + irsLimit + irsCatchup;
     }else{

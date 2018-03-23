@@ -43,7 +43,7 @@ export class ResultPage {
     })
     
 
-    var API_URL = "https://bitlb02.poolt.hewitt.com/dsi0101/calculator";
+    var API_URL = "https://beplb02.poolt.hewitt.com/dsi0101/calculator";
     var input = "Site=HSA_Modeler_Base_API_v6&Data="+encodeURIComponent(input_json);
     let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
     let options = new RequestOptions({ headers: headers });

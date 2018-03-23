@@ -28,7 +28,7 @@ export class MarginalPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad MarginalPage');
 
-    let tax_rate_selected: any;
+    
     this.tax_rate = JSON.parse(localStorage.getItem("Tax_Brackets"));
     for(var i=0; i<this.tax_rate.length; i++)
       this.tax_rate_options.push(this.tax_rate[i]["Tax Rate"])

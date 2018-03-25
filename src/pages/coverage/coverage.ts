@@ -11,12 +11,20 @@ import { SharedataProvider } from '../../providers/sharedata/sharedata';
 export class CoveragePage {
 
   clickMessage:string = 'You Only';
+  clickMessageage:string = 'UNDER 55';
+
   public serviceData: any;
-  
+
   constructor(public navCtrl: NavController, public navParams: NavParams, public shareDataProvider: SharedataProvider) {}
 
   async ionViewDidLoad() {
-    }
+
+    sessionStorage.setItem("age",'0');
+    sessionStorage.setItem("coverageType", '0');
+
+
+
+  }
 
   private buttonColor0: string = "light";
   private buttonColor1: string = "";
@@ -36,8 +44,8 @@ export class CoveragePage {
   }
 
   display(m) {
-  
-    
+
+
     if(m==0){
       this.coveragelvl0 = "light";
       this.coveragelvl1 = "";
@@ -64,7 +72,6 @@ export class CoveragePage {
     }
 
     let covType:object;
-    let agetype:object;
 
     covType = {
       "0": "You Only",
@@ -73,10 +80,7 @@ export class CoveragePage {
       "3": "You + Family"
     };
 
-    agetype = {
-      "0": "Under 55",
-      "1": "55 and Above 55"
-    };
+
 
    sessionStorage.setItem("coverageType", m);
     this.clickMessage = covType[m];
@@ -91,6 +95,15 @@ export class CoveragePage {
       this.buttonColor1 = "light";
       this.buttonColor0 = "";
     }
+
+    let agetype:object;
+
+    agetype = {
+      "0": "Under 55",
+      "1": "55 and Above 55"
+    };
+
     sessionStorage.setItem("age", m);
+    this.clickMessageage= agetype[m];
   }
 }

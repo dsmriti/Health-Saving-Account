@@ -15,7 +15,7 @@
         <ion-col col-12>
     <ion-item>
    <ion-label class="dollar">$</ion-label>
-    <ion-input type="number" [value]="current_hsa" (input)="current_hsa=$event.target.value" ></ion-input>
+    <ion-input type="number" [(ngModel)]="current_hsa" ></ion-input>
    </ion-item></ion-col>
 
 
@@ -25,7 +25,7 @@
    <ion-list inset>
        <ion-item class="contri">
         <ion-label>Company Contribution</ion-label>
-        <ion-input value="{{company_contri}}"></ion-input>
+        <ion-input [readonly]=true value="{{company_contri}}"></ion-input>
       </ion-item>
   </ion-list>
         </ion-row>
@@ -37,7 +37,7 @@
 
         <ion-item>
         <ion-label class="dollar">$</ion-label>
-        <ion-input type="number" [value]="" [(ngModel)]="annual_contri_value" (input)="checkanualcontribution()"></ion-input>
+        <ion-input type="number" [(ngModel)]="annual_contri_value" (input)="checkanualcontribution()"></ion-input>
       </ion-item>
         </ion-col>
     </ion-row>

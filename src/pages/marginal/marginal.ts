@@ -3,13 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ModalController } from 'ionic-angular';
 import { DetermineTaxRatePage } from './../determine-tax-rate/determine-tax-rate';
 import { ResultPage } from './../result/result';
-
-/**
- * Generated class for the MarginalPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { FormBuilder, FormGroup, Validators,FormControl } from '@angular/forms';
 
 @IonicPage()
 @Component({
@@ -17,18 +11,31 @@ import { ResultPage } from './../result/result';
   templateUrl: 'marginal.html',
 })
 export class MarginalPage {
- tax_rate:any;
- tax_rate_options:any=[];
- selected_tax_rate:string="";
- tax_rate_select:any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public modalCtrl: ModalController) {
+  marginalForm: FormGroup;
+  submitAttempt:boolean=false;
+
+  tax_rate:any;
+  tax_rate_options:any=[];
+  selected_tax_rate:string="";
+  tax_rate_select:any;
+
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams,
+              public formBuilder: FormBuilder,
+              public modalCtrl: ModalController) {
+
+
+    this.marginalForm = formBuilder.group({
+      m_t:['', Validators.compose([Validators.required])],
+    });
+
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MarginalPage');
 
-    
+
     this.tax_rate = JSON.parse(localStorage.getItem("Tax_Brackets"));
     for(var i=0; i<this.tax_rate.length; i++)
       this.tax_rate_options.push(this.tax_rate[i]["Tax Rate"])
@@ -52,7 +59,11 @@ export class MarginalPage {
       this.selected_tax_rate = data;
     })
   }
- movetoresult(){
-    this.navCtrl.push(ResultPage);
+  movetoresult(){
+
+    this.submitAttempt = true;
+    if(this.marginalForm.valid)
+      this.navCtrl.push(ResultPage);
+
   }
 }

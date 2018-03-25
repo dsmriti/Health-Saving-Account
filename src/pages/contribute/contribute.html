@@ -1,48 +1,52 @@
 <ion-header>
-
   <ion-navbar>
     <ion-title>Contribution</ion-title>
   </ion-navbar>
-
 </ion-header>
 
-
 <ion-content class="pane">
-
+  <form [formGroup]="contributeForm" (ngSubmit)="movetowithdrawal()">
     <ion-grid padding>
-        <label>Current HSA Balance</label>
-     <ion-row >
+      <label>Current HSA Balance</label>
+      <ion-row >
         <ion-col col-12>
-    <ion-item>
-   <ion-label class="dollar">$</ion-label>
-    <ion-input type="number" [(ngModel)]="current_hsa" ></ion-input>
-   </ion-item></ion-col>
+          <ion-item>
+            <ion-label class="dollar">$</ion-label>
+            <ion-input type="number" formControlName="c_h" [(ngModel)]="current_hsa" ></ion-input>
+          </ion-item></ion-col>
+      </ion-row>
 
+      <p *ngIf="!contributeForm.controls.c_h.valid  && (contributeForm.controls.c_h.dirty || submitAttempt)" class="exceed-value-text">Current HSA Balance is required.</p>
 
-   </ion-row>
-
-         <ion-row class="border-t">
-   <ion-list inset>
-       <ion-item class="contri">
-        <ion-label>Company Contribution</ion-label>
-        <ion-input [readonly]=true value="{{company_contri}}"></ion-input>
-      </ion-item>
-  </ion-list>
-        </ion-row>
-          <ion-row class="border-t">
-          <label>Your Annual Contribution <span (click)="openModal()"><ion-icon name="md-help-circle"></ion-icon></span></label>
-        </ion-row>
-        <ion-row>
+      <ion-row class="border-t">
+        <ion-list inset>
+          <ion-item class="contri">
+            <ion-label>Company Contribution</ion-label>
+            <ion-input [readonly]=true value="{{company_contri}}"></ion-input>
+          </ion-item>
+        </ion-list>
+      </ion-row>
+      <ion-row class="border-t">
+        <label>Your Annual Contribution <span (click)="openModal()"><ion-icon name="md-help-circle"></ion-icon></span></label>
+      </ion-row>
+      <ion-row>
         <ion-col>
 
-        <ion-item>
-        <ion-label class="dollar">$</ion-label>
-        <ion-input type="number" [(ngModel)]="annual_contri_value" (input)="checkanualcontribution()"></ion-input>
-      </ion-item>
+          <ion-item>
+            <ion-label class="dollar">$</ion-label>
+            <ion-input type="number" formControlName="a_c" [(ngModel)]="annual_contri_value" (input)="checkanualcontribution()"></ion-input>
+          </ion-item>
         </ion-col>
-    </ion-row>
+      </ion-row>
+
+      <p *ngIf="!contributeForm.controls.a_c.valid  && (contributeForm.controls.a_c.dirty || submitAttempt)" class="exceed-value-text">Your Annual Contribution is required.</p>
       <p padding class="exceed-value-text">{{exceed_value}}</p>
-  </ion-grid>
-  <button ion-button block class="nextbtn" (click)="movetowithdrawal()">Next<ion-icon name="arrow-forward"></ion-icon></button>
+    </ion-grid>
+    <button ion-button block class="nextbtn" type="submit">Next<ion-icon name="arrow-forward"></ion-icon></button>
+  </form>
+
+
+
+
 
 </ion-content>

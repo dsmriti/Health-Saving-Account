@@ -26,6 +26,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { SharedataProvider } from '../providers/sharedata/sharedata';
 import { IonicStorageModule } from '@ionic/storage';
 import { HttpModule } from '@angular/http';
+import { ScreenOrientation } from '@ionic-native/screen-orientation';
 
 @NgModule({
   declarations: [
@@ -77,6 +78,7 @@ import { HttpModule } from '@angular/http';
     File,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     SharedataProvider,
+    ScreenOrientation
    ]
 })
 export class AppModule {

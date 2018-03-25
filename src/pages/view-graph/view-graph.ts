@@ -1,20 +1,28 @@
 import { Component,ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Chart } from 'chart.js';
-
+import { ScreenOrientation } from '@ionic-native/screen-orientation';
 @IonicPage()
 @Component({
   selector: 'page-view-graph',
   templateUrl: 'view-graph.html',
 })
 export class ViewGraphPage {
+  
+
   result:any;
   years:  string[] = [];
   hsaBalnc: string[] = [];
-  
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+
+  constructor(public navCtrl: NavController, public navParams: NavParams,public screenOrientation: ScreenOrientation) {
+
   }
- public my(){
+
+  // lockLandscape() {
+  //   alert('Orientation locked landscape.');
+  //   this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.LANDSCAPE);
+  // }
+  public my(){
     let num = 0;
     while (num <= 49&&this.result.output_growtharray[num]!='') {
       this.years.push(num+" Years");
@@ -26,6 +34,13 @@ export class ViewGraphPage {
   @ViewChild('lineCanvas') lineCanvas;
   lineChart: any;
   ionViewDidLoad() {
+    //for screen orientation
+    this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.LANDSCAPE);
+    this.screenOrientation.onChange().subscribe(
+      () => {
+        console.log("Orientation Changed");
+      }
+    );
     this.result = this.navParams.get('data');
     console.log(this.hsaBalnc);
     console.log(this.years);
@@ -61,9 +76,9 @@ export class ViewGraphPage {
       }
 
     });
-   
-    
+
+
   }
- 
+
 
 }

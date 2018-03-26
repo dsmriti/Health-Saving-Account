@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ModalController } from 'ionic-angular';
 import { DetermineTaxRatePage } from './../determine-tax-rate/determine-tax-rate';
 import { ResultPage } from './../result/result';
-import { FormBuilder, FormGroup, Validators,FormControl } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @IonicPage()
 @Component({

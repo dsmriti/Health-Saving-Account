@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ExpenseModalPage } from './../expense-modal/expense-modal';
 import { ModalController } from 'ionic-angular';
 import { RatePage } from './../rate/rate';
-import { FormBuilder, FormGroup, Validators,FormControl } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 
 @IonicPage()

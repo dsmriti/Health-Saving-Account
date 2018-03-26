@@ -6,9 +6,17 @@
 
 <ion-content >
     <ion-grid padding>
-<h2>Contribution Growth</h2>
-     
-          <canvas #lineCanvas></canvas>
-        
-    </ion-grid>
+        <ion-card>
+            <ion-card-header>
+                <p class="heading">Contribution Growth</p>
+            </ion-card-header>
+            <ion-card-content>
+              <p class="display-result">Total Potential Value: ${{result?.output_totoverall}}</p>
+              <p class="display-result">Contributions: ${{result?.output_totcontrib}}</p>
+              <p class="display-result">Interest: ${{result?.output_totinterest}}</p>
+              <p class="display-result">Pre-Tax Savings: ${{result?.output_totpretax}}</p>
+            </ion-card-content>
+          </ion-card>
+        <canvas #lineCanvas></canvas>
+      </ion-grid>
 </ion-content>

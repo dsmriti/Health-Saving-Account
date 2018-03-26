@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ModalController } from 'ionic-angular';
 import { WithdrawalPage } from './../withdrawal/withdrawal';
 import { ContriModalPage } from './../contri-modal/contri-modal';
-import { FormBuilder, FormGroup, Validators,FormControl } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @IonicPage()
 @Component({

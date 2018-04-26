@@ -20,6 +20,7 @@ page-contribute {
                min-height: 48px;
                padding-left: 0px;
        }
+       
        .label.dollar{
            padding: $pad-glob;
            background: $def-color;
@@ -30,7 +31,7 @@ page-contribute {
   
     }
      .contri {
-         padding-left: 0;
+         padding-left: 10;
          .item-inner{   background-color: transparent !important;}
          .input{             
                background-color: $gray-back !important;

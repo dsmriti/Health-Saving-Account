@@ -51,7 +51,7 @@ export class WithdrawalPage {
     this.submitAttempt = true;
     if(this.withdrawalForm.valid){
 
-      if(this.value > this.total)
+      if(this.value >= this.total)
         this.error_message = "Please enter value less than "+ this.total;
       else{
         this.error_message=""

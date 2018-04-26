@@ -12,20 +12,23 @@
         <ion-col col-12>
           <ion-item>
             <ion-label class="dollar">$</ion-label>
-            <ion-input type="number" formControlName="c_h" [(ngModel)]="current_hsa" ></ion-input>
+            <ion-input type="number" min=0 formControlName="c_h" [(ngModel)]="current_hsa" ></ion-input>
           </ion-item></ion-col>
       </ion-row>
 
       <p *ngIf="!contributeForm.controls.c_h.valid  && (contributeForm.controls.c_h.dirty || submitAttempt)" class="exceed-value-text">Current HSA Balance is required.</p>
 
       <ion-row class="border-t">
-        <ion-list inset>
+          <label>Company Contribution</label>
+        </ion-row>
+        <ion-col col-12>
           <ion-item class="contri">
-            <ion-label>Company Contribution</ion-label>
-            <ion-input [readonly]=true value="{{company_contri}}"></ion-input>
-          </ion-item>
-        </ion-list>
-      </ion-row>
+              <ion-input  [readonly]=true value="{{company_contri}}"></ion-input>
+            </ion-item></ion-col>
+        <ion-row>
+        </ion-row>
+       
+     
       <ion-row class="border-t">
         <label>Your Annual Contribution <span (click)="openModal()"><ion-icon name="md-help-circle"></ion-icon></span></label>
       </ion-row>
@@ -34,7 +37,7 @@
 
           <ion-item>
             <ion-label class="dollar">$</ion-label>
-            <ion-input type="number" formControlName="a_c" [(ngModel)]="annual_contri_value" (input)="checkanualcontribution()"></ion-input>
+            <ion-input type="number" min=0 formControlName="a_c" [(ngModel)]="annual_contri_value" (input)="checkanualcontribution()"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>

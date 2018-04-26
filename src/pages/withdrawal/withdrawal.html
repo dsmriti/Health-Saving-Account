@@ -22,7 +22,7 @@
         <ion-col>
           <ion-item>
             <ion-label class="dollar">$</ion-label>
-            <ion-input type="number" formControlName="e_a" [(ngModel)]="value" (input)="estimate()"></ion-input>
+            <ion-input type="number" min=0 formControlName="e_a" [(ngModel)]="value" (input)="estimate()"></ion-input>
           </ion-item></ion-col>
       </ion-row>
       <p padding *ngIf="!withdrawalForm.controls.e_a.valid  && (withdrawalForm.controls.e_a.dirty || submitAttempt)" class="exceed-value-text">Estimated Annual Withdrawal is required.</p>

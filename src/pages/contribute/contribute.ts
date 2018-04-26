@@ -25,15 +25,15 @@ export class ContributePage {
     }
 
   company_contri: any;
-  current_hsa : number;
+  current_hsa : any;
   annual_contri: number;
-  companyContri:any;
-  above_55:number;
-  under_55:number;
-  annual_contri_value:number;
+  companyContri: number;
+  above_55: number;
+  under_55: number;
+  annual_contri_value: number;
   exceed_value:any;
-  coverageType: any;
-  age: any;
+  coverageType: number;
+  age: number;
   data4 : any;
   data5: any ;
 

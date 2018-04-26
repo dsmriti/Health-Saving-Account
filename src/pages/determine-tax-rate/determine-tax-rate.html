@@ -26,13 +26,13 @@
     <ion-row class="btn-grp">
 
       <ion-col col-12 >
-        <button ion-button class="side-r active" (click)="display('Single')"><ion-icon class="single active"></ion-icon></button>
+        <button ion-button [color]="deter5" class="side-r" (click)="determine(5);display('Single')"><ion-icon class="single"></ion-icon></button>
 
-        <button ion-button class="side-b" (click)="display('Married Filing Joint')"><ion-icon class="double"></ion-icon></button>
+        <button ion-button [color]="deter6" class="side-b" (click)="determine(6);display('Married Filing Joint')"><ion-icon class="double"></ion-icon></button>
 
-        <button ion-button class="side-b" (click)="display('Married Filing Separate')"><ion-icon class="triple"></ion-icon></button>
+        <button ion-button [color]="deter7" class="side-b" (click)="determine(7);display('Married Filing Separate')"><ion-icon class="triple"></ion-icon></button>
 
-        <button ion-button class="side-l" (click)="display('Head of Household')"><ion-icon class="family"></ion-icon></button>
+        <button ion-button [color]="deter8" class="side-l" (click)="determine(8);display('Head of Household')"><ion-icon class="family"></ion-icon></button>
       </ion-col>
       <p padding class="display-text">{{clickMessage}}</p>
     </ion-row>
@@ -44,13 +44,13 @@
 
         <ion-select id="option_selected_tax_rate" [(ngModel)]="tax_rate_select" submitText="Okay" cancelText="Cancel"  (ionChange)="onSelectTaxoOptions(tax_rate_select)">
           <ion-option *ngFor="let option of tax_rate_option" value="{{option.tax_rate_selected}}">{{option.selection}}</ion-option>
-          <!--<ion-option value="dos">Upto $9,325</ion-option>-->
-          <!--<ion-option value="lunix">$9,326 - $37,950</ion-option>-->
-          <!--<ion-option value="mac7">$37,951 - $76,550</ion-option>-->
-          <!--<ion-option value="mac8">$76,551 - $116,675</ion-option>-->
-          <!--<ion-option value="win3.1">$116,676 - $208,350</ion-option>-->
-          <!--<ion-option value="win95">$208,351 - $235,350</ion-option>-->
-          <!--<ion-option value="win98">Over $235,350</ion-option>-->
+         <!--<ion-option value="dos">Upto $9,325</ion-option>
+          <ion-option value="lunix">$9,326 - $37,950</ion-option>
+          <ion-option value="mac7">$37,951 - $91,900</ion-option>
+          <ion-option value="mac8">$91,901 - $191,650</ion-option>
+          <ion-option value="win3.1">$191,651 - $416,700</ion-option>
+          <ion-option value="win95">$416,701 - $418,400</ion-option>
+          <ion-option value="win98">Over $418,400</ion-option>-->
         </ion-select>
       </ion-item>
     </ion-row>

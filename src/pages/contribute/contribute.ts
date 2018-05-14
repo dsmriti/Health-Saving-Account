@@ -4,6 +4,8 @@ import { ModalController } from 'ionic-angular';
 import { WithdrawalPage } from './../withdrawal/withdrawal';
 import { ContriModalPage } from './../contri-modal/contri-modal';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AlertController } from 'ionic-angular';
+
 
 @IonicPage()
 @Component({
@@ -16,7 +18,8 @@ export class ContributePage {
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               public formBuilder: FormBuilder,
-              public modalCtrl: ModalController) {
+              public modalCtrl: ModalController,
+			  private alertCtrl: AlertController) {
 
     this.contributeForm = formBuilder.group({
       c_h:['', Validators.compose([Validators.maxLength(20),Validators.required])],
@@ -30,10 +33,10 @@ export class ContributePage {
   companyContri: number;
   above_55: number;
   under_55: number;
-  annual_contri_value: number;
+  annual_contri_value: any;
   exceed_value:any;
   coverageType: number;
-  age: number;
+  age: any;
   data4 : any;
   data5: any ;
 
@@ -57,17 +60,42 @@ export class ContributePage {
     let modal = this.modalCtrl.create(ContriModalPage, characterNum);
     modal.present();
   }
+  
+checkContri()
+{
+if(this.annual_contri_value === '0')
+		  	this.annual_contri_value='';
+}
+
+checkHsa()
+{
+if(this.current_hsa === '0')
+		  	this.current_hsa='';
+}
+
+  contri()
+  {
+  if(this.annual_contri_value=='')
+	{
+	this.annual_contri_value='0';
+	}
+  }
+  currHsa()
+  {
+  if(this.current_hsa=='')
+	{
+	this.current_hsa='0';
+	}
+  }
 
   movetowithdrawal(){
     this.submitAttempt = true;
     if(this.contributeForm.valid){
       if (this.annual_contri_value > this.annual_contri) {
-        console.log("Value Excceded ");
-        this.exceed_value = "Please enter value less than "+ this.annual_contri;
+        this.presentAlert("Your Annual Contribution should be less than "+ this.annual_contri);
       }
       else{
         this.exceed_value=""
-        console.log(this.coverageType);
         this.navCtrl.push(WithdrawalPage,{
           data1:this.current_hsa,
           data2:this.company_contri,
@@ -83,13 +111,16 @@ export class ContributePage {
     }
     }
 
-  checkanualcontribution() {
-    console.log(this.annual_contri_value);
-    if (this.annual_contri_value > this.annual_contri) {
-      console.log("Value Excceded ");
-      this.exceed_value = "Please enter value less than "+ this.annual_contri;
-    }
-  }
+
+presentAlert(data) {
+  let alert = this.alertCtrl.create({
+    title: 'Error',
+    subTitle: data,
+    buttons: ['Ok']
+  });
+  alert.present();
+}
+
 
   companyContribution(yourCoverageType, yourAge){
     let Tiers_SeedMoney_Limits = JSON.parse(localStorage.getItem("Tiers_SeedMoney_Limits"));

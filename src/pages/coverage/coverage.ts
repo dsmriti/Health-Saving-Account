@@ -34,11 +34,11 @@ export class CoveragePage {
   private coveragelvl2: string = "";
   private coveragelvl3: string = "";
 
-  // public getoverhallcoverage(data) {
-  //   var result = 0;
-  //   for(var i= 0; i< data.length; i++) result+=data[i];
-  //   return result;
-  // }
+  public getoverhallcoverage(data) {
+    var result = 0;
+    for(var i= 0; i< data.length; i++) result+=data[i];
+    return result;
+  }
   movetocontri(){
     this.navCtrl.push(ContributePage);
   }

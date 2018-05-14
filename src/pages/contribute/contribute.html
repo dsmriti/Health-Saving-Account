@@ -12,11 +12,9 @@
         <ion-col col-12>
           <ion-item>
             <ion-label class="dollar">$</ion-label>
-            <ion-input type="number" min=0 formControlName="c_h" [(ngModel)]="current_hsa" ></ion-input>
+            <ion-input type="number" min= "0" formControlName="c_h" [(ngModel)]="current_hsa" (ionFocus)="checkHsa()" value="0" (ionBlur)="currHsa()"></ion-input>
           </ion-item></ion-col>
       </ion-row>
-
-      <p *ngIf="!contributeForm.controls.c_h.valid  && (contributeForm.controls.c_h.dirty || submitAttempt)" class="exceed-value-text">Current HSA Balance is required.</p>
 
       <ion-row class="border-t">
           <label>Company Contribution</label>
@@ -37,13 +35,11 @@
 
           <ion-item>
             <ion-label class="dollar">$</ion-label>
-            <ion-input type="number" min=0 formControlName="a_c" [(ngModel)]="annual_contri_value" (input)="checkanualcontribution()"></ion-input>
+            <ion-input type="number" min="0" formControlName="a_c" [(ngModel)]="annual_contri_value" name="annual_contri_value" value="0" (ionFocus)="checkContri()" (ionBlur)="contri()"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
-
-      <p *ngIf="!contributeForm.controls.a_c.valid  && (contributeForm.controls.a_c.dirty || submitAttempt)" class="exceed-value-text">Your Annual Contribution is required.</p>
-      <p padding class="exceed-value-text">{{exceed_value}}</p>
+     
     </ion-grid>
     <button ion-button block class="nextbtn" type="submit">Next<ion-icon name="arrow-forward"></ion-icon></button>
   </form>

@@ -17,14 +17,12 @@
         </ion-item>
       </ion-row>
 
-      <p padding *ngIf="!marginalForm.controls.m_t.valid  && (marginalForm.controls.m_t.dirty || submitAttempt)" class="exceed-value-text">Marginal Tax Rate is required.</p>
-
       <ion-row (click)="openModal()">
         <ion-col col-12><p ><ion-icon name="alert"></ion-icon>
           Determine Your Tax Rate</p></ion-col>
       </ion-row>
 
     </ion-grid>
-    <button ion-button block class="nextbtn">Next<ion-icon name="arrow-forward"></ion-icon></button>
+    <button ion-button block class="nextbtn"><strong>Calculate</strong><ion-icon name="arrow-forward"></ion-icon></button>
   </form>
 </ion-content>

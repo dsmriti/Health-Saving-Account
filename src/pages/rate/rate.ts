@@ -25,6 +25,7 @@ export class RatePage {
   movetomarginal(){
     this.navCtrl.push(MarginalPage);
   }
+  
   public rate(selectedrate) {
     this.interest_rate = String(selectedrate);
     sessionStorage.setItem("interest_rate", this.interest_rate);
@@ -35,5 +36,6 @@ export class RatePage {
     sessionStorage.setItem("growth_rate", this.growth_rate);
     console.log(selectedgrowth);
   }
+ 
 
 }

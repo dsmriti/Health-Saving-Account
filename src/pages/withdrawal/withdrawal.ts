@@ -4,6 +4,7 @@ import { ExpenseModalPage } from './../expense-modal/expense-modal';
 import { ModalController } from 'ionic-angular';
 import { RatePage } from './../rate/rate';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AlertController } from 'ionic-angular';
 
 
 @IonicPage()
@@ -20,13 +21,14 @@ export class WithdrawalPage {
   a:number;
   b:number;
   c:number;
-  value: number;
+  value: any;
   total:number;
   error_message: any;
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               public formBuilder: FormBuilder,
-              public modalCtrl: ModalController) {
+              public modalCtrl: ModalController,
+			  private alertCtrl: AlertController) {
 
     this.withdrawalForm = formBuilder.group({
       e_a:['', Validators.compose([Validators.maxLength(20),Validators.required])],
@@ -51,26 +53,39 @@ export class WithdrawalPage {
     this.submitAttempt = true;
     if(this.withdrawalForm.valid){
 
-      if(this.value >= this.total)
-        this.error_message = "Please enter value less than "+ this.total;
+      if(this.value > this.total)
+        this.presentAlert("Withdrawal can not excced from "+ this.total);
       else{
         this.error_message=""
         this.navCtrl.push(RatePage);
         var estimated_value = String(this.value);
         sessionStorage.setItem("estimated_value", estimated_value);
       }
-
-
     }
+}
+
+checkFocus()
+{
+if(this.value === '0')
+		  	this.value='';
+}
 
 
 
-  }
+withdraw()
+{
+if(this.value == '')
+	{
+	this.value='0';
+	}
+}
 
-  estimate(){
-    if(this.value > this.total) {
-      console.log("Please enter value less than "+ this.total);
-      this.error_message = "Please enter value less than "+ this.total;
-    }
-  }
+    presentAlert(data) {
+  let alert = this.alertCtrl.create({
+    title: 'Error',
+    subTitle: data,
+    buttons: ['Ok']
+  });
+  alert.present();
+}
 }
